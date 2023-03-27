@@ -17,7 +17,7 @@ func ListNodes(client kubernetes.Interface) (*responsestruct.NodeRespose, error)
 		logger.Info("Error getting cluster nodes...", zap.String("error", err.Error()))
 		return nil, err
 	}
-	nodesInfo := responsestruct.NodeRespose{}
+	nodesInfo := &responsestruct.NodeRespose{}
 	nodesInfo.NodeNumber = len(nodes.Items)
 	for _, node := range nodes.Items {
 		if node.Labels["node-role.kubernetes.io/control-plane"] == "true" {
@@ -27,7 +27,7 @@ func ListNodes(client kubernetes.Interface) (*responsestruct.NodeRespose, error)
 		}
 		nodesInfo.KubernetesVersion = node.Status.NodeInfo.KubeletVersion
 	}
-	return &nodesInfo, nil
+	return nodesInfo, nil
 }
 
 func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceRespose, error) {
@@ -37,14 +37,14 @@ func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceRespo
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
 	}
-	namespaceInfo := responsestruct.NamespaceRespose{}
+	namespaceInfo := &responsestruct.NamespaceRespose{}
 	namespaceInfo.NamespaceNumber = len(namespaces.Items)
-	return &namespaceInfo, nil
+	return namespaceInfo, nil
 }
 
 func ListIngress(client kubernetes.Interface) (*responsestruct.IngressResponse, error) {
 	logger.Info("Get cluster ingress...")
-	ingressInfo := responsestruct.IngressResponse{}
+	ingressInfo := &responsestruct.IngressResponse{}
 	namespaces, err := client.CoreV1().Namespaces().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
@@ -58,12 +58,12 @@ func ListIngress(client kubernetes.Interface) (*responsestruct.IngressResponse, 
 		}
 		ingressInfo.IngressNumber += len(ingresses.Items)
 	}
-	return &ingressInfo, nil
+	return ingressInfo, nil
 }
 
 func ListPods(client kubernetes.Interface) (*responsestruct.PodsResponse, error) {
 	logger.Info("Get cluster pods...")
-	podsInfo := responsestruct.PodsResponse{}
+	podsInfo := &responsestruct.PodsResponse{}
 	namespaces, err := client.CoreV1().Namespaces().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
@@ -89,5 +89,5 @@ func ListPods(client kubernetes.Interface) (*responsestruct.PodsResponse, error)
 			}
 		}
 	}
-	return &podsInfo, nil
+	return podsInfo, nil
 }
