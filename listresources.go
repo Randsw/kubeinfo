@@ -25,6 +25,7 @@ func ListNodes(client kubernetes.Interface) (*responsestruct.NodeRespose, error)
 		} else if node.Labels["node-role.kubernetes.io/compute"] == "true" {
 			nodesInfo.WorkerNumber++
 		}
+		nodesInfo.KubernetesVersion = node.Status.NodeInfo.KubeletVersion
 	}
 	return &nodesInfo, nil
 }

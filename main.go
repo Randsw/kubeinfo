@@ -23,6 +23,7 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
 	// #TODO Get Node information
+	
 	// #TODO Get namespace information
 	// #TODO Get Pod informatio
 	// #TODO Get Ingress information
