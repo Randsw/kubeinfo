@@ -6,8 +6,8 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	k8sClient "github.com/randsw/cascadescenariocontroller/k8sclient"
 	responsestruct "github.com/randsw/kubeinfo/KubeApiResponseStruct"
+	k8sClient "github.com/randsw/kubeinfo/k8sclient"
 	"github.com/randsw/kubeinfo/logger"
 	prom "github.com/randsw/kubeinfo/prometheus-exporter"
 	"go.uber.org/zap"
@@ -77,7 +77,7 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	clusterInfo.Pods = *pods
 	// Get Ingress information
-	ingresses, err = ListIngress((k8sAPIClientset))
+	ingresses, err = ListIngress(k8sAPIClientset)
 	if err != nil {
 		w.WriteHeader(500)
 		w.Header().Set("Content-Type", "application/json")
@@ -91,8 +91,37 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	clusterInfo.Ingresses = *ingresses
-	// #TODO Get Flux kustomization information
-	// #TODO Get Flux Helmrelease information
+	// Get Flux kustomization information
+	dynamcClient := k8sClient.ConnectToK8sDinamic()
+	fluxKustomization, err := ListFluxKustomization(*k8sAPIClientset, dynamcClient)
+	if err != nil {
+		w.WriteHeader(500)
+		w.Header().Set("Content-Type", "application/json")
+		resp := make(map[string]string)
+		resp["message"] = "Error while requesting kubernetes API about FluxKustomizations: " + err.Error()
+		jsonResp, err := json.Marshal(resp)
+		if err != nil {
+			logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+		}
+		w.Write(jsonResp)
+		return
+	}
+	clusterInfo.FluxKustomizations = *fluxKustomization
+	// Get Flux Helmrelease information
+	fluxHelmrelease, err := ListHelmrelease(*k8sAPIClientset, dynamcClient)
+	if err != nil {
+		w.WriteHeader(500)
+		w.Header().Set("Content-Type", "application/json")
+		resp := make(map[string]string)
+		resp["message"] = "Error while requesting kubernetes API about FluxHelmreleases: " + err.Error()
+		jsonResp, err := json.Marshal(resp)
+		if err != nil {
+			logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+		}
+		w.Write(jsonResp)
+		return
+	}
+	clusterInfo.FluxHelmreleases = *fluxHelmrelease
 
 	// Marshal map to JSON and send back
 	w.Header().Set("Content-Type", "application/json")

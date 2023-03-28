@@ -12,6 +12,7 @@ type NodeRespose struct {
 	ContolPlaneNumber int    `json:"contolplanenumber"`
 	WorkerNumber      int    `json:"workernumber"`
 	KubernetesVersion string `json:"kubernetesversion"`
+	OsImage           string `json:"osimage"`
 }
 
 type NamespaceRespose struct {
@@ -27,9 +28,33 @@ type IngressResponse struct {
 	IngressNumber int `json:"ingressnumber"`
 }
 
+type FluxKustomizationsStatus struct {
+	Ready    int `json:"ready"`
+	NotReady int `json:"notready"`
+	Unknown  int `json:"unknown"`
+}
+
+type FluxKustomizationsResponse struct {
+	FluxKustomizationsNumber         int                      `json:"fluxkustomizationsnumber"`
+	FluxKustomizationsNumberbyStatus FluxKustomizationsStatus `json:"fluxkustomizationsnumberbystatus"`
+}
+
+type FluxHelmreleasesStatus struct {
+	Ready    int `json:"ready"`
+	NotReady int `json:"notready"`
+	Unknown  int `json:"unknown"`
+}
+
+type FluxHelmreleasesResponse struct {
+	FluxHelmreleasesNumber         int                      `json:"fluxhelmreleasesnumber"`
+	FluxHelmreleasesNumberbyStatus FluxKustomizationsStatus `json:"fluxhelmreleasesnumberbystatus"`
+}
+
 type ResourceResponce struct {
-	Nodes      NodeRespose      `json:"nodes"`
-	Namespaces NamespaceRespose `json:"namespaces"`
-	Pods       PodsResponse     `json:"pods"`
-	Ingresses  IngressResponse  `json:"ingresses"`
+	Nodes              NodeRespose                `json:"nodes"`
+	Namespaces         NamespaceRespose           `json:"namespaces"`
+	Pods               PodsResponse               `json:"pods"`
+	Ingresses          IngressResponse            `json:"ingresses"`
+	FluxKustomizations FluxKustomizationsResponse `json:"fluxkustomizations"`
+	FluxHelmreleases   FluxHelmreleasesResponse   `json:"fluxhelmreleases"`
 }
