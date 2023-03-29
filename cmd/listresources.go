@@ -15,7 +15,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 )
 
-func getAllNamespaces(client kubernetes.Interface) (*v1.NamespaceList, error) {
+func GetAllNamespaces(client kubernetes.Interface) (*v1.NamespaceList, error) {
 	namespaces, err := client.CoreV1().Namespaces().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		return nil, err
@@ -46,7 +46,7 @@ func ListNodes(client kubernetes.Interface) (*responsestruct.NodeRespose, error)
 
 func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceRespose, error) {
 	logger.Info("Get cluster namespaces...")
-	namespaces, err := getAllNamespaces(client)
+	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
@@ -59,7 +59,7 @@ func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceRespo
 func ListIngress(client kubernetes.Interface) (*responsestruct.IngressResponse, error) {
 	logger.Info("Get cluster ingresses...")
 	ingressInfo := &responsestruct.IngressResponse{}
-	namespaces, err := getAllNamespaces(client)
+	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
@@ -78,7 +78,7 @@ func ListIngress(client kubernetes.Interface) (*responsestruct.IngressResponse, 
 func ListPods(client kubernetes.Interface) (*responsestruct.PodsResponse, error) {
 	logger.Info("Get cluster pods...")
 	podsInfo := &responsestruct.PodsResponse{}
-	namespaces, err := getAllNamespaces(client)
+	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
@@ -109,7 +109,7 @@ func ListPods(client kubernetes.Interface) (*responsestruct.PodsResponse, error)
 func ListFluxKustomization(client kubernetes.Interface, clientDynamic dynamic.Interface) (*responsestruct.FluxKustomizationsResponse, error) {
 	logger.Info("Get cluster flux kustomizations...")
 	fluxKustomizationsInfo := &responsestruct.FluxKustomizationsResponse{}
-	namespaces, err := getAllNamespaces(client)
+	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
@@ -148,7 +148,7 @@ func ListFluxKustomization(client kubernetes.Interface, clientDynamic dynamic.In
 func ListHelmrelease(client kubernetes.Interface, clientDynamic dynamic.Interface) (*responsestruct.FluxHelmreleasesResponse, error) {
 	logger.Info("Get cluster flux helmreleases...")
 	fluxHelmreleasesInfo := &responsestruct.FluxHelmreleasesResponse{}
-	namespaces, err := getAllNamespaces(client)
+	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
