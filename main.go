@@ -48,28 +48,28 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
 	// Get Node information
-	nodes, err = k8sCRUD.ListNodes(*k8sAPIClientset)
+	nodes, err = k8sCRUD.ListNodes(k8sAPIClientset)
 	if err != nil {
 		errorResponse(w, err, "nodes")
 		return
 	}
 	clusterInfo.Nodes = *nodes
 	// Get namespace information
-	namespaces, err = k8sCRUD.ListNamespaces(*k8sAPIClientset)
+	namespaces, err = k8sCRUD.ListNamespaces(k8sAPIClientset)
 	if err != nil {
 		errorResponse(w, err, "namespaces")
 		return
 	}
 	clusterInfo.Namespaces = *namespaces
 	// Get Pod information
-	pods, err = k8sCRUD.ListPods(*k8sAPIClientset)
+	pods, err = k8sCRUD.ListPods(k8sAPIClientset)
 	if err != nil {
 		errorResponse(w, err, "pods")
 		return
 	}
 	clusterInfo.Pods = *pods
 	// Get Ingress information
-	ingresses, err = k8sCRUD.ListIngress(*k8sAPIClientset)
+	ingresses, err = k8sCRUD.ListIngress(k8sAPIClientset)
 	if err != nil {
 		errorResponse(w, err, "ingresses")
 		return
@@ -77,14 +77,14 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 	clusterInfo.Ingresses = *ingresses
 	// Get Flux kustomization information
 	dynamcClient := k8sClient.ConnectToK8sDinamic()
-	fluxKustomization, err := k8sCRUD.ListFluxKustomization(*k8sAPIClientset, dynamcClient)
+	fluxKustomization, err := k8sCRUD.ListFluxKustomization(k8sAPIClientset, dynamcClient)
 	if err != nil {
 		errorResponse(w, err, "FluxKustomizations")
 		return
 	}
 	clusterInfo.FluxKustomizations = *fluxKustomization
 	// Get Flux Helmrelease information
-	fluxHelmrelease, err := k8sCRUD.ListHelmrelease(*k8sAPIClientset, dynamcClient)
+	fluxHelmrelease, err := k8sCRUD.ListHelmrelease(k8sAPIClientset, dynamcClient)
 	if err != nil {
 		errorResponse(w, err, "FluxHelmreleases")
 		return
