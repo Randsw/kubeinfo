@@ -36,10 +36,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
       - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v4
         with:
@@ -56,4 +52,3 @@ jobs:
         steps:
         - name: Release
           uses: softprops/action-gh-release@v1
-        
