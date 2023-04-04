@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"log"
 
 	"go.uber.org/zap"
@@ -12,8 +13,6 @@ type Zaplog struct {
 }
 
 var Zaplogger Zaplog
-
-//var SugarLog *zap.SugaredLogger
 
 func InitLogger() {
 	var err error
@@ -28,7 +27,7 @@ func InitLogger() {
 	defer func() {
 		err := Zaplogger.logger.Sync()
 		if err != nil {
-			log.Fatalf("can't sync zap logger: %v", err)
+			fmt.Printf("can't sync zap logger: %v", err)
 		}
 	}()
 	//defer Zaplogger.logger.Sync()
