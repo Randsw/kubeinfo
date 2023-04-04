@@ -454,12 +454,15 @@ func TestListFluxKustomization(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			var fluxKustomizations = schema.GroupVersionResource{Group: "kustomize.toolkit.fluxcd.io", Version: "v1beta2", Resource: "kustomizations"}
 			testScheme := runtime.NewScheme()
-			kustomizev1.AddToScheme(testScheme)
+			err := kustomizev1.AddToScheme(testScheme)
+			if err != nil {
+				t.Fatalf("unexpected error while adding to Scheme: %v", err)
+			}
 			fluxKustomizationsInfo := &responsestruct.FluxKustomizationsResponse{}
 			fakeClientSet := dynamicfake.NewSimpleDynamicClientWithCustomListKinds(testScheme,
 				map[schema.GroupVersionResource]string{
 					fluxKustomizations: "KustomizationList"}, test.clusterFluxKustomizations...)
-			err := ListFluxKustomization(fakeClientSet, test.namespace, fluxKustomizationsInfo)
+			err = ListFluxKustomization(fakeClientSet, test.namespace, fluxKustomizationsInfo)
 			if fluxKustomizationsInfo.FluxKustomizationsNumber != test.expectedNumber {
 				t.Fatalf("Number of FluxKustomizations in namespace %s - %d are not equal expected value %d", test.namespace,
 					fluxKustomizationsInfo.FluxKustomizationsNumber,
@@ -617,12 +620,15 @@ func TestListHelmreleases(t *testing.T) {
 	//	t.Run(test.name, func(t *testing.T) {
 			var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2beta1", Resource: "helmreleases"}
 			testScheme := runtime.NewScheme()
-			helmv2.AddToScheme(testScheme)
+			err := helmv2.AddToScheme(testScheme)
+			if err != nil {
+				t.Fatalf("unexpected error while adding to Scheme: %v", err)
+			}
 			fluxHelmreleasesInfo := &responsestruct.FluxHelmreleasesResponse{}
 			fakeClientSet := dynamicfake.NewSimpleDynamicClientWithCustomListKinds(testScheme,
 				map[schema.GroupVersionResource]string{
 					fluxHelmreleases: "HelmReleaseList"}, test.clusterFluxHelmrelease...)
-			err := ListHelmreleases(fakeClientSet, test.namespace, fluxHelmreleasesInfo)
+			err = ListHelmreleases(fakeClientSet, test.namespace, fluxHelmreleasesInfo)
 			if fluxHelmreleasesInfo.FluxHelmreleasesNumber != test.expectedNumber {
 				t.Fatalf("Number of FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
 					fluxHelmreleasesInfo.FluxHelmreleasesNumber,

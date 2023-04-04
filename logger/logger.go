@@ -25,7 +25,13 @@ func InitLogger() {
 	if err != nil {
 		log.Fatalf("can't initialize zap logger: %v", err)
 	}
-	defer Zaplogger.logger.Sync()
+	defer func() {
+		err := Zaplogger.logger.Sync()
+		if err != nil {
+			log.Fatalf("can't sync zap logger: %v", err)
+		}
+	}()
+	//defer Zaplogger.logger.Sync()
 }
 
 func (z *Zaplog) Printf(message string, fields ...interface{}) {

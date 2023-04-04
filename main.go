@@ -30,20 +30,26 @@ func errorResponse(w http.ResponseWriter, err error, reqresource string) {
 	if err != nil {
 		logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
 		w.WriteHeader(500)
-		w.Write([]byte("Error while marshaling kubeinfo response"))
+		_, err := w.Write([]byte("Error while marshaling kubeinfo response"))
+		if err != nil {
+			logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+		}
 		return
 	}
 	w.WriteHeader(503)
-	w.Write(jsonResp)
+	_, err = w.Write(jsonResp)
+	if err != nil {
+		logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+	}
 }
 
 func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 	// Variable declaration
 	var err error
-	nodes := &responsestruct.NodeRespose{}
-	namespaces := &responsestruct.NamespaceRespose{}
-	pods := &responsestruct.PodsResponse{}
-	ingresses := &responsestruct.IngressResponse{}
+	var nodes *responsestruct.NodeRespose
+	var namespaces *responsestruct.NamespaceRespose
+	var pods *responsestruct.PodsResponse
+	var ingresses *responsestruct.IngressResponse
 	clusterInfo := &responsestruct.ResourceResponce{}
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -103,11 +109,17 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			w.WriteHeader(500)
 			logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
-			w.Write([]byte("Error while marshaling kubeinfo response"))
+			_, err := w.Write([]byte("Error while marshaling kubeinfo response"))
+			if err != nil {
+				logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+			}
 			return
 		}
 		w.WriteHeader(503)
-		w.Write(jsonResp)
+		_, err = w.Write(jsonResp)
+		if err != nil {
+			logger.Error("Error while marshaling kubeinfo response", zap.String("err", err.Error()))
+		}
 		return
 	}
 }
