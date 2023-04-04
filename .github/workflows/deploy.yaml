@@ -42,6 +42,7 @@ jobs:
           # Note: tags has to be all lower-case
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          push: true
     release:
         name: "Release"
         runs-on: "ubuntu-latest"
