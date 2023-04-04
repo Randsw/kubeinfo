@@ -1,7 +1,6 @@
 package logger
 
 import (
-	"fmt"
 	"log"
 
 	"go.uber.org/zap"
@@ -24,13 +23,13 @@ func InitLogger() {
 	if err != nil {
 		log.Fatalf("can't initialize zap logger: %v", err)
 	}
-	defer func() {
-		err := Zaplogger.logger.Sync()
-		if err != nil {
-			fmt.Printf("can't sync zap logger: %v", err)
-		}
-	}()
-	//defer Zaplogger.logger.Sync()
+}
+
+func CloseLogger() {
+	err := Zaplogger.logger.Sync()
+	if err != nil {
+		log.Printf("can't sync zap logger: %v", err)
+	}
 }
 
 func (z *Zaplog) Printf(message string, fields ...interface{}) {

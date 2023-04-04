@@ -127,6 +127,7 @@ func getKubeInfo(w http.ResponseWriter, r *http.Request) {
 func main() {
 	//Loger Initialization
 	logger.InitLogger()
+	defer logger.CloseLogger()
 	//Initialize HTTP server
 	mux := mux.NewRouter()
 	mux.Use(prom.PrometheusMiddleware)

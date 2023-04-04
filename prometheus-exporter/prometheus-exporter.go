@@ -6,7 +6,6 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promauto"
 )
 
 var totalRequests = prometheus.NewCounterVec(
@@ -25,7 +24,7 @@ var responseStatus = prometheus.NewCounterVec(
 	[]string{"status"},
 )
 
-var httpDuration = promauto.NewHistogramVec(prometheus.HistogramOpts{
+var httpDuration = prometheus.NewHistogramVec(prometheus.HistogramOpts{
 	Name: "http_response_time_seconds",
 	Help: "Duration of HTTP requests.",
 }, []string{"path"})
