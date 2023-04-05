@@ -9,13 +9,7 @@ COPY go.sum go.sum
 # and so that source changes don't invalidate our downloaded layer
 RUN go mod download
 
-# Copy the go source
-COPY logger/ logger/
-COPY prometheus-exporter/ prometheus-exporter/
-COPY k8sclient/ k8sclient/
-COPY KubeApiResponseStruct/ KubeApiResponseStruct/
-COPY cmd/ cmd/
-COPY main.go main.go
+COPY . .
 
 # Build
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o kubeinfo main.go
