@@ -15,7 +15,7 @@ import (
 )
 
 func getHealth(w http.ResponseWriter, r *http.Request) {
-	_, _ = w.Write([]byte("Ok. KubeInfo. Version 1.0.0"))
+	_, _ = w.Write([]byte("Ok. KubeInfo. Version 0.1.7"))
 }
 
 func metrics(w http.ResponseWriter, r *http.Request) {
