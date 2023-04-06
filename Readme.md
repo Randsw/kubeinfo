@@ -15,6 +15,7 @@
 <a href="" alt="Build">
         <img src="https://img.shields.io/github/actions/workflow/status/randsw/kubeinfo/test.yaml?label=tests" /></a>
 </p>
+
 ## Introduction
 :warning: **Attention**
 **This project created for educational purposes and serves as proof-of-concept. Another goal is to learn how to work with Kubernetes CRD and CR using client-go library. As a CRD for information i choose my favorite GitOps tool - [FluxCD](https://fluxcd.io/)**
