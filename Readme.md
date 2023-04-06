@@ -39,15 +39,15 @@
 ## Overview
 
 This application listen at port **8080** and provides several endpoints
-| endpoint            | method                |return       | return value|
+| endpoint            | HTTP Verb             |return       | return value|
 |---------------------|-----------------------|-------------|-------------|
-| /                   | GetKubeInfo           | All of the following | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L53-L60) |
-| /nodes              | GetNodes              | Overall number of nodes and number of nodes by role(control-plane or worker) | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L10-L16) |
-| /namespaces         | GetNamespaces         | Overall number of namespaces | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L18-L20) |
-| /pods               | GetPods               | Overall number of pods and number of pods by phase | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L22-L25)
-| /ingresses          | GetIngresses          | Overall number of ingresses | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L27-L29) |
-| /fluxkustomizations | GetFluxKustomizations | Overall number of fluxkustomizations and number of fluxkustomizations by status | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L37-L40) |
-| /fluxhelmreleases   | GetFluxKustomizations | Overall number of fluxhelmreleases and number of fluxhelmreleases by status | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L48-L51) |
+| /                   | GET                   | All of the following | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L53-L60) |
+| /nodes              | GET                   | Overall number of nodes and number of nodes by role(control-plane or worker) | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L10-L16) |
+| /namespaces         | GET                   | Overall number of namespaces | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L18-L20) |
+| /pods               | GET                   | Overall number of pods and number of pods by phase | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L22-L25)
+| /ingresses          | GET                   | Overall number of ingresses | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L27-L29) |
+| /fluxkustomizations | GET                   | Overall number of fluxkustomizations and number of fluxkustomizations by status | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L37-L40) |
+| /fluxhelmreleases   | GET                   | Overall number of fluxhelmreleases and number of fluxhelmreleases by status | [struct](https://github.com/Randsw/kubeinfo/blob/e27d51c9f40db18d2ad56718052483812042f68d/KubeApiResponseStruct/kubeapiresponsestruct.go#L48-L51) |
 
 ### Metrics
 
