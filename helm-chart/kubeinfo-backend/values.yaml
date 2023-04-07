@@ -105,22 +105,22 @@ roles:
         - list
 
 livenessProbe:
-    httpGet:
-      # should match container.healthCheckPath
-      path: "/healthz"
-      port: 8080
-      scheme: HTTP
+  httpGet:
+    # should match container.healthCheckPath
+    path: "/healthz"
+    port: 8080
+    scheme: HTTP
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
 readinessProbe:
-    httpGet:
-      # should match container.healthCheckPath
-      path: "/healthz"
-      port: 8080
-      scheme: HTTP
+  httpGet:
+    # should match container.healthCheckPath
+    path: "/healthz"
+    port: 8080
+    scheme: HTTP
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
