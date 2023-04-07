@@ -30,21 +30,19 @@ jobs:
         with:
           files: helm-chart/kubeinfo-backend/*.{yaml,tpl}
 
-    #   - name: Run chart-testing (list-changed)
-    #     id: list-changed
-    #     run: |
-    #         changed=$(ct list-changed --config ct.yaml)
-    #         if [[ -n "$changed" ]]; then
-    #         echo "::set-output name=changed::true"
-    #         fi
+      - name: List all changed files
+        id: list-changed-files
+        run: |
+            echo "List all the files that have changed: ${{ steps.changed-files-helm-chart.outputs.all_changed_files }}"
 
       - name: Run chart-testing (lint)
         run: ct lint --config ct.yaml --all
-        if: steps.changed-files-helm-chart.any_changed == 'true'
+        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.5.0
-        if: steps.changed-files-helm-chart.any_changed == 'true'
+        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
 
       - name: Run chart-testing (install)
         run: ct install --config ct.yaml --all
+        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
