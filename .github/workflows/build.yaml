@@ -1,4 +1,4 @@
-name: kubeinfo
+name: Build and Push
 on:
   push:
     tags:
