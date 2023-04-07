@@ -52,6 +52,30 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+# Probes
+livenessProbe:
+  httpGet:
+    # should match container.healthCheckPath
+    path: "/healthz"
+    port: 8080
+    scheme: HTTP
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 5
+readinessProbe:
+  httpGet:
+    # should match container.healthCheckPath
+    path: "/healthz"
+    port: 8080
+    scheme: HTTP
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 3
+
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -65,7 +89,7 @@ tolerations: []
 
 affinity: {}
 
-
+# Role and RoleBinding for app
 roles:
   - enabled: true
     name: "kubeinfo"
@@ -104,28 +128,7 @@ roles:
         - get
         - list
 
-livenessProbe:
-  httpGet:
-    # should match container.healthCheckPath
-    path: "/healthz"
-    port: 8080
-    scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    timeoutSeconds: 1
-    successThreshold: 1
-    failureThreshold: 5
-readinessProbe:
-  httpGet:
-    # should match container.healthCheckPath
-    path: "/healthz"
-    port: 8080
-    scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    timeoutSeconds: 1
-    successThreshold: 1
-    failureThreshold: 3
+
 
 metrics:
   enabled: true
