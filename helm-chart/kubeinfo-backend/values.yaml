@@ -128,8 +128,6 @@ roles:
         - get
         - list
 
-
-
 metrics:
   enabled: true
   port: 8080

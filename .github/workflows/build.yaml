@@ -44,10 +44,17 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-
     release:
         name: "Release"
         runs-on: "ubuntu-latest"
         steps:
         - name: Release
           uses: softprops/action-gh-release@v1
+        - name: Run chart-releaser
+          uses: helm/chart-releaser-action@v1.4.0
+          with:
+            charts_dir: helm-chart
+            #config: cr.yaml
+          env:
+            CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
