@@ -14,6 +14,8 @@
         <img src="https://img.shields.io/github/actions/workflow/status/randsw/kubeinfo/build.yaml" /></a>
 <a href="" alt="Build">
         <img src="https://img.shields.io/github/actions/workflow/status/randsw/kubeinfo/test.yaml?label=tests" /></a>
+<a href="" alt="Build">
+        <img src="https://img.shields.io/github/actions/workflow/status/randsw/kubeinfo/helm-chart-test.yaml?label=helm-chart-test" /></a>
 </p>
 
 ## Introduction
