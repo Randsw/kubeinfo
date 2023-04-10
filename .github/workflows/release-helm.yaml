@@ -15,7 +15,7 @@ jobs:
           uses: actions/checkout@v3
           with:
             fetch-depth: 0
-            
+
         - name: Configure Git
           run: |
             git config user.name "$GITHUB_ACTOR"
@@ -27,6 +27,7 @@ jobs:
           uses: helm/chart-releaser-action@v1.4.0
           with:
             charts_dir: helm-chart
+            skip_packaging: true
             #config: cr.yaml
           env:
             CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
