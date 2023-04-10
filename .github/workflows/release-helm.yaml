@@ -1,0 +1,20 @@
+name: Release Helm Chart
+on:
+  push:
+    tags:
+        - '*.*.*-chart'
+permissions:
+    contents: write
+    packages: write
+jobs:
+    release:
+        name: "Release"
+        runs-on: "ubuntu-latest"
+        steps:
+        - name: Run chart-releaser
+          uses: helm/chart-releaser-action@v1.4.0
+          with:
+            charts_dir: helm-chart
+            #config: cr.yaml
+          env:
+            CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
