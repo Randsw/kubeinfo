@@ -1,7 +1,7 @@
 name: Release Helm Chart
 on:
   push:
-    tags:
+     tags:
         - 'chart-*.*.*'
 permissions:
     contents: write
@@ -27,7 +27,6 @@ jobs:
           uses: helm/chart-releaser-action@v1.5.0
           with:
             charts_dir: helm-chart
-            skip_packaging: true
-            #config: cr.yaml
+            #skip_packaging: true
           env:
             CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
