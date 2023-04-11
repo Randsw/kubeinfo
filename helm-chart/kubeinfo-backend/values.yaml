@@ -64,6 +64,7 @@ livenessProbe:
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
+
 readinessProbe:
   httpGet:
     # should match container.healthCheckPath
@@ -89,12 +90,13 @@ tolerations: []
 
 affinity: {}
 
-# Role and RoleBinding for app
-roles:
+# ClusterRole and ClusterRoleBinding for app
+clusterroles:
   - enabled: true
     name: "kubeinfo"
     kind: "ServiceAccount"
-    role_binding: true
+    clusterrolebinding: 
+      enabled: true
     labels: {}
     rules:
       - apiGroups:
