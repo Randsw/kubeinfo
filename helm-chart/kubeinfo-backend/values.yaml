@@ -95,7 +95,7 @@ clusterroles:
   - enabled: true
     name: "kubeinfo"
     kind: "ServiceAccount"
-    clusterrolebinding: 
+    clusterrolebinding:
       enabled: true
     labels: {}
     rules:
