@@ -2,6 +2,7 @@ name: Lint and Test Charts
 
 on:
   push:
+  pull_request:
 
 permissions:
   contents: write
@@ -46,19 +47,4 @@ jobs:
 
       - name: Run chart-testing (install)
         run: ct install --config ct.yaml --all
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
-
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
-
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
-        with:
-          charts_dir: helm-chart
-          #skip_packaging: true
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
