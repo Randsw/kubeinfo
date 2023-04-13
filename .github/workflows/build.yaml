@@ -1,15 +1,26 @@
 name: Build and Push
 on:
-  push:
-    tags:
-        - '^[0-9]+.[0-9]+.*'
+  pull_request:
+    types:
+      - opened
+    branches:
+      - 'main'
+    paths:
+      - '**.go'
+      - 'Dockerfile'
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#     branches:
+#       - 'main'
 env:
   GO_VERSION: 1.19.1
 permissions:
     contents: write
     packages: write
 jobs:
-    deploy:
+    Deploy:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
       steps:
@@ -44,7 +55,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-    release:
+    Release:
         name: "Release"
         runs-on: "ubuntu-latest"
         steps:
