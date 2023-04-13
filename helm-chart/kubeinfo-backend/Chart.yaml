@@ -1,7 +1,6 @@
 apiVersion: v2
 name: kubeinfo-backend
-description: A Helm chart for Kubernetes
-
+description: Backend for kubeinfo. An application that get information about several resources in kubernetes cluster
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
