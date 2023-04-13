@@ -2,18 +2,12 @@ name: Build and Push
 on:
   pull_request:
     types:
-      - opened
+      - closed
     branches:
       - 'main'
     paths:
       - '**.go'
       - 'Dockerfile'
-# on:
-#   pull_request:
-#     types:
-#       - opened
-#     branches:
-#       - 'main'
 env:
   GO_VERSION: 1.19.1
 permissions:
@@ -21,6 +15,7 @@ permissions:
     packages: write
 jobs:
     Deploy:
+      if: github.event.pull_request.merged == true
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
       steps:
