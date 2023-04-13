@@ -130,6 +130,7 @@ clusterroles:
         - get
         - list
 
+# Prometheus metrics
 metrics:
   enabled: true
   port: 8080

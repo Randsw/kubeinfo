@@ -3,7 +3,7 @@ name: Release Helm Chart
 on:
   pull_request:
     types:
-      - opened
+      - closed
     branches:
       - 'main'
     paths:
@@ -13,6 +13,7 @@ permissions:
     contents: write
 jobs:
   Release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,7 +50,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.5.0
         with:
             charts_dir: helm-chart
-        #skip_packaging: true
         env:
             CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
