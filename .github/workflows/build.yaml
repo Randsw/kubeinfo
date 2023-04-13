@@ -20,7 +20,7 @@ permissions:
     contents: write
     packages: write
 jobs:
-    deploy:
+    Deploy:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
       steps:
@@ -55,7 +55,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-    release:
+    Release:
         name: "Release"
         runs-on: "ubuntu-latest"
         steps:

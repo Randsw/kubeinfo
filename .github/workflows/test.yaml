@@ -6,7 +6,7 @@ env:
   GO_VERSION: 1.19.1
 jobs:
     # build workflow
-    build:
+    Test:
       runs-on: ubuntu-latest
       steps:
       - name: set up go ${{env.GO_VERSION}}
@@ -22,7 +22,7 @@ jobs:
         run: go build -v ./...
       - name: Test
         run: go test -v ./...
-    lint:
+    Lint:
       runs-on: ubuntu-latest
       steps:
         - name: set up go ${{env.GO_VERSION}}

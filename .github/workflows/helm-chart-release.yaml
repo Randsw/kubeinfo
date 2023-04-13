@@ -12,7 +12,7 @@ on:
 permissions:
     contents: write
 jobs:
-  lint-test:
+  Release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
