@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'helm-chart/kubeinfo-backend/*.{yaml,tpl}'
+      - 'helm-chart/kubeinfo-backend/*.yaml'
 
 permissions:
     contents: write

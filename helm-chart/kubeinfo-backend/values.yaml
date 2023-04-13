@@ -131,7 +131,7 @@ clusterroles:
         - list
 
 # Prometheus metrics
-# Disabled by default
+# Servicemonitor disabled by default
 metrics:
   enabled: false
   port: 8080
