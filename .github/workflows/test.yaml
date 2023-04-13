@@ -7,6 +7,13 @@ on:
     paths:
       - '**.go'
   pull_request:
+    types:
+      - closed
+    branches:
+      - 'main'
+    paths:
+      - '**.go'
+      - 'Dockerfile'
 env:
   GO_VERSION: 1.19.1
 jobs:
