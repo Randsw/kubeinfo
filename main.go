@@ -29,12 +29,17 @@ func main() {
 	mux.HandleFunc("/fluxhelmreleases", handlers.GetFluxHelmreleases)
 	// Main handler
 	mux.HandleFunc("/", handlers.GetKubeInfo)
-	servingAddress := ":8080"
+	servingPort := ":8080"
 	if envvar := os.Getenv("API_PORT"); len(envvar) > 0 {
+		servingPort = envvar
+	}
+	servingAddress := ""
+	if envvar := os.Getenv("API_ADDRESS"); len(envvar) > 0 {
 		servingAddress = envvar
 	}
-	logger.Info("Start serving http request...", zap.String("address", servingAddress))
-	err := http.ListenAndServe(servingAddress, mux)
+	servingAt := servingAddress + ":" + servingPort
+	logger.Info("Start serving http request...", zap.String("address", servingAt))
+	err := http.ListenAndServe(servingAt, mux)
 	if err != nil {
 		logger.Error("Fail to start http server", zap.String("err", err.Error()))
 	}
