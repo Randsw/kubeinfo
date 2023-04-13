@@ -1,5 +1,4 @@
 name: Release Helm Chart
-
 on:
   pull_request:
     types:
@@ -8,7 +7,6 @@ on:
       - 'main'
     paths:
       - 'helm-chart/kubeinfo-backend/*.yaml'
-
 permissions:
     contents: write
 jobs:
