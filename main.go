@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/randsw/kubeinfo/handlers"
@@ -29,6 +30,9 @@ func main() {
 	// Main handler
 	mux.HandleFunc("/", handlers.GetKubeInfo)
 	servingAddress := ":8080"
+	if envvar := os.Getenv("API_PORT"); len(envvar) > 0 {
+		servingAddress = envvar
+	}
 	logger.Info("Start serving http request...", zap.String("address", servingAddress))
 	err := http.ListenAndServe(servingAddress, mux)
 	if err != nil {
