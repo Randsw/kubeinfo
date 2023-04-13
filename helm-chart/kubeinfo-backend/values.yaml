@@ -130,9 +130,10 @@ clusterroles:
         - get
         - list
 
-# Enable Prometheus metrics
+# Prometheus metrics
+# Disabled by default
 metrics:
-  enabled: true
+  enabled: false
   port: 8080
   portName: http
   serviceMonitor:
