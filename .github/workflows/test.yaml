@@ -2,15 +2,12 @@ name: Tests
 on:
   push:
     branches:
-      - '*'
-      - '!main'
+      - 'develop'
+      - 'main'
     paths:
       - '**.go'
   pull_request:
-    types:
-      - closed
     branches:
-      - 'main'
       - 'develop'
     paths:
       - '**.go'
