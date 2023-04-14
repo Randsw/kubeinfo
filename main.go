@@ -18,6 +18,7 @@ func main() {
 	//Initialize HTTP server
 	mux := mux.NewRouter()
 	mux.Use(prom.PrometheusMiddleware)
+	// Metrics and health handler
 	mux.HandleFunc("/healthz", handlers.GetHealth)
 	mux.HandleFunc("/metrics", handlers.Metrics)
 	// Resource handlers
