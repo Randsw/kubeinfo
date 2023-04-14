@@ -11,6 +11,7 @@ on:
       - closed
     branches:
       - 'main'
+      - 'develop'
     paths:
       - 'helm-chart/kubeinfo-backend/*.yaml'
 permissions:

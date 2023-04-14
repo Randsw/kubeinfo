@@ -11,6 +11,7 @@ on:
       - closed
     branches:
       - 'main'
+      - 'develop'
     paths:
       - '**.go'
       - 'Dockerfile'
