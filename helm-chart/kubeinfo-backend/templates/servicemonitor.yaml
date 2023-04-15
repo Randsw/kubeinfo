@@ -8,7 +8,6 @@ metadata:
 {{- end }}
   labels:
     {{- include "kubeinfo-backend.labels" . | nindent 4 }}
-    app.kubernetes.io/component: controller
   {{- if .Values.metrics.serviceMonitor.additionalLabels }}
     {{- toYaml .Values.metrics.serviceMonitor.additionalLabels | nindent 4 }}
   {{- end }}

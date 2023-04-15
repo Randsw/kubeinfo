@@ -55,7 +55,6 @@ resources: {}
 # Probes
 livenessProbe:
   httpGet:
-    # should match container.healthCheckPath
     path: "/healthz"
     port: 8080
     scheme: HTTP
@@ -67,7 +66,6 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    # should match container.healthCheckPath
     path: "/healthz"
     port: 8080
     scheme: HTTP
@@ -155,7 +153,7 @@ metrics:
   prometheusRule:
     enabled: false
     additionalLabels: {}
-    # namespace: ""
+    namespace: ""
     rules: []
       # # These are just examples rules, please adapt them to your needs
       # - alert: NGINXConfigFailed
