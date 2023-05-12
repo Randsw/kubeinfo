@@ -35,6 +35,7 @@ func main() {
 	if envvar := os.Getenv("API_PORT"); len(envvar) > 0 {
 		servingPort = envvar
 	}
+	// Setup serving address
 	servingAddress := ""
 	if envvar := os.Getenv("API_ADDRESS"); len(envvar) > 0 {
 		servingAddress = envvar
