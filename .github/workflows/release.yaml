@@ -1,0 +1,35 @@
+name: Create semantic release
+on:
+  workflow_run:
+    workflows: [Tests]
+    branches:
+      - main
+      - develop
+    types:
+      - completed
+permissions:
+  contents: write
+jobs:
+  Semantic-Release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+            token: ${{ secrets.SEMANTIC_TOKEN }}
+        - name: Setup NodeJS
+          uses: actions/setup-node@v3
+
+        - name: Setup package.json
+          run: echo '{"name":"semantic-release", "devDependencies":{"@semantic-release/changelog":"^6.0.1","@semantic-release/exec":"^6.0.3","@semantic-release/git":"^10.0.1","@semantic-release/release-notes-generator":"^10.0.3","conventional-changelog-conventionalcommits":"^5.0.0","semantic-release":"^21.0.2"}}' > package.json
+        
+        - name: Install dependencies
+          run: npm install
+        
+        - name: Release
+          run: npx semantic-release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.SEMANTIC_TOKEN }}

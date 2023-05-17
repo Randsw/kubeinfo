@@ -55,17 +55,29 @@ jobs:
           id: check-branch
           run: |
             onMainBranch=false
+            onDevelopBranch=false
             branches=$(git branch -r --contains tags/$GITHUB_REF_NAME)
             for branch in $branches; do
               if [[ $branch == "origin/main" ]]; then
               onMainBranch=true
               fi
+              if [[ $branch == "origin/develop" ]]; then
+              onDevelopBranch=true
+              fi
             done
             echo "onMainBranch=$onMainBranch" >> $GITHUB_OUTPUT
+            echo "onDevelopBranch=$onDevelopBranch" >> $GITHUB_OUTPUT
             echo $onMainBranch
+            echo $onDevelopBranch
           shell: bash
         - name: Release
           uses: softprops/action-gh-release@v1
           with:
             generate_release_notes: true
           if: ${{ steps.check-branch.outputs.onMainBranch == 'true'}}
+        - name: Pre-Release
+          uses: softprops/action-gh-release@v1
+          with:
+            prerelease: true
+            generate_release_notes: true
+          if: ${{ steps.check-branch.outputs.onDevelopBranch == 'true'}}
