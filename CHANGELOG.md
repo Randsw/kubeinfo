@@ -1,3 +1,19 @@
+## [0.3.1-develop.1](https://github.com/Randsw/kubeinfo/compare/0.3.0-develop.1...0.3.1-develop.1) (2023-05-17)
+
+
+### 🦊 CI/CD
+
+* **semver:** Disable npm publish ([0b34961](https://github.com/Randsw/kubeinfo/commit/0b349613a3469c7b69be9f4771baeffeeced63f7))
+* **semver:** Fix typo in semver config ([d301398](https://github.com/Randsw/kubeinfo/commit/d3013987693489ecb549476b25a1bedcc74d08c6))
+* **semver:** Install npm plugin ([669b94b](https://github.com/Randsw/kubeinfo/commit/669b94b01357b60474c533035ceced94cc5b4d38))
+
+
+### 🛠 Fixes
+
+* **app:** Change gh action workflow structure. Release only after lint and test on develop branch ([7cf9d91](https://github.com/Randsw/kubeinfo/commit/7cf9d9154d9fb17ff61b8a6cb891371a307a457e))
+* **app:** Test version bump patch ([8f85679](https://github.com/Randsw/kubeinfo/commit/8f85679b0734a410a0644592e1f2ec1fb3d6e25a))
+* **ci:** Start semantic release only if tests pass ([f14c055](https://github.com/Randsw/kubeinfo/commit/f14c0559223423a1ddce8c40733cf480935dd00d))
+
 ## [0.3.0-develop.1](https://github.com/Randsw/kubeinfo/compare/0.2.0...0.3.0-develop.1) (2023-05-17)
 
 
