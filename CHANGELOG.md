@@ -1,0 +1,61 @@
+## [0.3.0-develop.1](https://github.com/Randsw/kubeinfo/compare/0.2.0...0.3.0-develop.1) (2023-05-17)
+
+
+### :scissors: Refactor
+
+* **helm:** Remove useless var ([d17cde0](https://github.com/Randsw/kubeinfo/commit/d17cde0fa78636f91f343639a7953e3aa73ea250))
+
+
+### 🦊 CI/CD
+
+* **semver:** Delete option in checkout ([03da109](https://github.com/Randsw/kubeinfo/commit/03da109efa54bd83b5377afa3ede0e8526c22d3b))
+* **semver:** Remove semantic release 3rd party action, explicit install and use it ([cd30c91](https://github.com/Randsw/kubeinfo/commit/cd30c9115cb5812315c97d89beadf59312d2a6d4))
+* **semver:** Trigger release ([b64e949](https://github.com/Randsw/kubeinfo/commit/b64e949d2e4164a88b52d12cfbfaf9acabd09a7c))
+* **semver:** Use another var ([b623c0a](https://github.com/Randsw/kubeinfo/commit/b623c0ae37ae9599cc436fad2e6ed185ba4e485c))
+
+
+### 🚀 Features
+
+* **app:** Allow set serving address by env var ([2ab123f](https://github.com/Randsw/kubeinfo/commit/2ab123f28e66bcf97a68f907a392202b98eb134c))
+* **app:** Get server port value from env ([c6d23fb](https://github.com/Randsw/kubeinfo/commit/c6d23fb60015f744cc5c4d6f8d567126054cc5f9))
+* **ci:** Add automatic semantic release ([cfad72e](https://github.com/Randsw/kubeinfo/commit/cfad72e1149cef8758f4e1504af8be547db8c538))
+* **ge-actions:** Allow trigger workflow on pull-request to develop ([2ce1a76](https://github.com/Randsw/kubeinfo/commit/2ce1a7615848f95c2852616ed45b5a5a5ada7b26))
+* **gh-actions:** Run tests only after lint stage ([7fc218f](https://github.com/Randsw/kubeinfo/commit/7fc218ff5f291b633fd55fbcb5d205abdebd79ae))
+* **helm:** Add prometheus rule. Bump chart version ([#23](https://github.com/Randsw/kubeinfo/issues/23)) ([0b8b92f](https://github.com/Randsw/kubeinfo/commit/0b8b92f71d7864163175a4ae32057a2177310290))
+
+
+### 🛠 Fixes
+
+* **app:** Add comment ([e5ce2c1](https://github.com/Randsw/kubeinfo/commit/e5ce2c189c25e75a1a692a82865d3effcb16359d))
+* **app:** Fix serving port default value ([#13](https://github.com/Randsw/kubeinfo/issues/13)) ([1a613d9](https://github.com/Randsw/kubeinfo/commit/1a613d99bf0071a467930db45d53afc794812780))
+* **app:** More comments ([c0209b3](https://github.com/Randsw/kubeinfo/commit/c0209b3897911e6f0337afdea2e3776c438bcc90))
+* **ci:** Downgrade Node verison ([bf4c748](https://github.com/Randsw/kubeinfo/commit/bf4c74809af81308611fa039f71440aa8e674276)), closes [#30](https://github.com/Randsw/kubeinfo/issues/30)
+* **ci:** Downgrade Node verison ([d8974e8](https://github.com/Randsw/kubeinfo/commit/d8974e8b2115207a6c01a46558e38ea2fbda51b6))
+* **ci:** Fix semantic release extra plugins ([f096060](https://github.com/Randsw/kubeinfo/commit/f0960601d8ce886822ff3510030f46461384d2ee))
+* **ci:** Fix semantic release extra plugins ([2e81b8a](https://github.com/Randsw/kubeinfo/commit/2e81b8a4c327884534954c78fe2428b99429393d))
+* **ci:** Update go file ([e1543e0](https://github.com/Randsw/kubeinfo/commit/e1543e0aac639a1b144dd8ad52205056190a8b96))
+* **gh-action:** Release can be done only on push to main ([44d6a9c](https://github.com/Randsw/kubeinfo/commit/44d6a9cb253f4e6074f7c14448e926cf36dab0c4))
+* **gh-action:** Remove old workflow ([86487f7](https://github.com/Randsw/kubeinfo/commit/86487f7e73d821785764ebafde8c2b82237a0348))
+* **gh-action:** Remove old workflow ([95ea668](https://github.com/Randsw/kubeinfo/commit/95ea6685d9568db896f8ba8436864e9e0b6817ac))
+* **gh-actions:** Change gh action trigger ([125a4e1](https://github.com/Randsw/kubeinfo/commit/125a4e13b387f7db0672ca4215fa965f40674ad3))
+* **gh-actions:** Change path filter in gh actions ([79e6579](https://github.com/Randsw/kubeinfo/commit/79e6579d77b2af3ead91943731e29f2f20032a41))
+* **gh-actions:** Change trigger to run on push on develop and  main. Aslo trigger test after pull request to develop ([1d2bad4](https://github.com/Randsw/kubeinfo/commit/1d2bad452c3753140c5cbea52d2408a8bea30fae))
+* **gh-actions:** Dont run test on main branch ([d331a7d](https://github.com/Randsw/kubeinfo/commit/d331a7d12ef2981061ea82ad6e6e0db14da5b766))
+* **gh-actions:** Fix - Trigger dont run test workflow ([f3a26e9](https://github.com/Randsw/kubeinfo/commit/f3a26e9e96a202f7da5fdaf89cd66684cec789ce))
+* **gh-actions:** Fix error in release if statement ([1137c09](https://github.com/Randsw/kubeinfo/commit/1137c09dd49f11ec6e2f1e4db011c7aaa0008bd0))
+* **gh-actions:** Run release only on tag belong to main branch commit ([06c07d7](https://github.com/Randsw/kubeinfo/commit/06c07d75b5b37f2c7936f64c10a3d6ef3be120c1))
+* **gh-actions:** Run test only if *.go file is changed ([68a8a6b](https://github.com/Randsw/kubeinfo/commit/68a8a6b837c9edb178f65f108f69445ab0a1f5b9))
+* **gh-actions:** Trigger image build on tag in main ([f5a0e13](https://github.com/Randsw/kubeinfo/commit/f5a0e1331731f118b3b04396e89abd9a710b8ba1))
+* **gh-actions:** Trigger image build on tag in main ([3f584d4](https://github.com/Randsw/kubeinfo/commit/3f584d45d926cbe14af175c1ad8682dac43e9554))
+* **helm:** Disable prometheus metrics by default ([8267766](https://github.com/Randsw/kubeinfo/commit/8267766bbf9f741fb272a7bdf47f053d1ee3eebd))
+* **helm:** Disable prometheus metrics by default ([4c83aa0](https://github.com/Randsw/kubeinfo/commit/4c83aa0c61571357b8f23d052b2d552fda4c59e9))
+* **semver:** Use node version 14 ([4c2f50f](https://github.com/Randsw/kubeinfo/commit/4c2f50f5c44f4fa52093e76682cedbe54fdfa5d6))
+* **semver:** Use node version 14 ([d76c450](https://github.com/Randsw/kubeinfo/commit/d76c450308cad0fe23adc5ba6c3cb27718cf0dbd))
+* **semver:** Use node version 16 ([b3a6e1d](https://github.com/Randsw/kubeinfo/commit/b3a6e1dfcd1c60ccade610aca8613eafe9d5e40c))
+
+
+### Other
+
+* **app:** Bump app version for gh-actions test ([9a7acc4](https://github.com/Randsw/kubeinfo/commit/9a7acc4d03ed8143e4d85ca808286197b5f527ee))
+* **helm:** Bump chart version ([14aa3f3](https://github.com/Randsw/kubeinfo/commit/14aa3f3b64124c378413052fcf1e22a26b35c0f0))
+* **semver:** Bump semantic release verison ([55973e3](https://github.com/Randsw/kubeinfo/commit/55973e39e68fd064806a65c8b7baf9fb33da6614))
