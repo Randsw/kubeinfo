@@ -119,6 +119,10 @@ prepare:
     message: "chore(release): ${nextRelease.version} [skip ci]"
     assets: ['CHANGELOG.md']
 
+publish:
+  - path: '@@semantic-release/npm'
+    npmPublish: false
+
 success: false
 
 fail: false
