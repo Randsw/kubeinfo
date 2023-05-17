@@ -1,3 +1,10 @@
+## [0.3.1-develop.4](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.3...0.3.1-develop.4) (2023-05-17)
+
+
+### 🛠 Fixes
+
+* **app-structs:** Add struct definition ([1e2f109](https://github.com/Randsw/kubeinfo/commit/1e2f109b3140a4f2032aaf345229583e7cec70b2))
+
 ## [0.3.1-develop.3](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.2...0.3.1-develop.3) (2023-05-17)
 
 

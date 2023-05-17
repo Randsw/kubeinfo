@@ -1,5 +1,6 @@
 package kubeApiResponseStruct
 
+// PodsStatus is the representation of kubernetes pod phase.
 type PodsStatus struct {
 	PendingNumber   int `json:"nodenumber"`
 	RunningNumber   int `json:"runningnumber"`
