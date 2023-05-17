@@ -51,33 +51,28 @@ jobs:
         steps:
         - name: Checkout
           uses: actions/checkout@v3
-        - name: Check which branch belong commit with tag
-          id: check-branch
-          run: |
-            onMainBranch=false
-            onDevelopBranch=false
-            branches=$(git branch -r --contains tags/$GITHUB_REF_NAME)
-            for branch in $branches; do
-              if [[ $branch == "origin/main" ]]; then
-              onMainBranch=true
-              fi
-              if [[ $branch == "origin/develop" ]]; then
-              onDevelopBranch=true
-              fi
-            done
-            echo "onMainBranch=$onMainBranch" >> $GITHUB_OUTPUT
-            echo "onDevelopBranch=$onDevelopBranch" >> $GITHUB_OUTPUT
-            echo $onMainBranch
-            echo $onDevelopBranch
-          shell: bash
+          with:
+            fetch-depth: 0
+        - name: Check if tag belong to commit in main branch
+          uses: rickstaa/action-contains-tag@v1
+          id: contains_tag_main
+          with:
+            reference: "main"
+            tag: "${{ github.ref }}"
+        - name: Check if tag belong to commit in develop branch
+          uses: rickstaa/action-contains-tag@v1
+          id: contains_tag_develop
+          with:
+            reference: "develop"
+            tag: "${{ github.ref }}"
         - name: Release
           uses: softprops/action-gh-release@v1
           with:
             generate_release_notes: true
-          if: ${{ steps.check-branch.outputs.onMainBranch == 'true'}}
+          if: ${{ steps.contains_tag_main.outputs.retval == 'true'}}
         - name: Pre-Release
           uses: softprops/action-gh-release@v1
           with:
             prerelease: true
             generate_release_notes: true
-          if: ${{ steps.check-branch.outputs.onDevelopBranch == 'true'}}
+          if: ${{ steps.contains_tag_develop.outputs.retval == 'true'}}
