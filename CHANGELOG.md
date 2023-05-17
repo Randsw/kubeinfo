@@ -1,3 +1,10 @@
+## [0.3.1-develop.3](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.2...0.3.1-develop.3) (2023-05-17)
+
+
+### 🛠 Fixes
+
+* **app:** Use new action for checking which branch belong commit with tag ([d7e0c84](https://github.com/Randsw/kubeinfo/commit/d7e0c84b99ddbe4375f90bdaae949f7419ec793d))
+
 ## [0.3.1-develop.2](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.1...0.3.1-develop.2) (2023-05-17)
 
 
