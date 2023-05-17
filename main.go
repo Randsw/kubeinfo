@@ -30,12 +30,12 @@ func main() {
 	mux.HandleFunc("/fluxhelmreleases", handlers.GetFluxHelmreleases)
 	// Main handler
 	mux.HandleFunc("/", handlers.GetKubeInfo)
-	// Setup serving port
+	// Define serving port
 	servingPort := "8080"
 	if envvar := os.Getenv("API_PORT"); len(envvar) > 0 {
 		servingPort = envvar
 	}
-	// Setup serving address
+	// Define serving address
 	servingAddress := ""
 	if envvar := os.Getenv("API_ADDRESS"); len(envvar) > 0 {
 		servingAddress = envvar

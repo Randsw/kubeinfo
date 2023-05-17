@@ -1,16 +1,17 @@
 name: Create semantic release
 on:
-  push:
+  workflow_run:
+    workflows: [Tests]
     branches:
-      - 'develop'
-      - 'main'
-    paths:
-      - '**.go'
-      - 'Dockerfile'
+      - main
+      - develop
+    types:
+      - completed
 permissions:
   contents: write
 jobs:
   Semantic-Release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
