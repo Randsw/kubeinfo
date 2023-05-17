@@ -120,7 +120,7 @@ prepare:
     assets: ['CHANGELOG.md']
 
 publish:
-  - path: '@@semantic-release/npm'
+  - path: '@semantic-release/npm'
     npmPublish: false
 
 success: false
