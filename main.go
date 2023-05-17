@@ -42,7 +42,7 @@ func main() {
 	}
 	servingAt := servingAddress + ":" + servingPort
 	logger.Info("Start serving http request...", zap.String("address", servingAt))
-	//Start app forever
+	//Start app
 	err := http.ListenAndServe(servingAt, mux)
 	if err != nil {
 		logger.Error("Fail to start http server", zap.String("err", err.Error()))
