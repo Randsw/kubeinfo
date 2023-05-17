@@ -1,3 +1,10 @@
+## [0.3.1-develop.2](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.1...0.3.1-develop.2) (2023-05-17)
+
+
+### 🛠 Fixes
+
+* **app:** Test image build after tag ([9e63578](https://github.com/Randsw/kubeinfo/commit/9e63578089eacce06a58cb711450ec2dcd37bea6))
+
 ## [0.3.1-develop.1](https://github.com/Randsw/kubeinfo/compare/0.3.0-develop.1...0.3.1-develop.1) (2023-05-17)
 
 
