@@ -1,3 +1,15 @@
+## [1.0.1](https://github.com/Randsw/kubeinfo/compare/1.0.0...1.0.1) (2023-05-18)
+
+
+### 🛠 Fixes
+
+* **struct:** Add comment to NodeResponse struct ([be83bb1](https://github.com/Randsw/kubeinfo/commit/be83bb1c3e47cddebbbf1623f2aec20a48816566))
+
+
+### Other
+
+* **release:** 0.3.1-develop.5 ([e20803d](https://github.com/Randsw/kubeinfo/commit/e20803de238525c20aad0dccc5a1da78d8db35ee))
+
 ## [1.0.0](https://github.com/Randsw/kubeinfo/compare/0.2.2...1.0.0) (2023-05-17)
 
 
