@@ -8,6 +8,8 @@ type PodsStatus struct {
 	FailedNumber    int `json:"failednumber"`
 }
 
+// NodeResponse is represenatation of kubernetes nodes information include number of nodes by type
+// kubernetes verison and OS type
 type NodeRespose struct {
 	NodeNumber        int    `json:"nodenumber"`
 	ContolPlaneNumber int    `json:"contolplanenumber"`
