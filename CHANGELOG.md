@@ -1,3 +1,10 @@
+## [0.3.1-develop.5](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.4...0.3.1-develop.5) (2023-05-18)
+
+
+### 🛠 Fixes
+
+* **struct:** Add comment to NodeResponse struct ([be83bb1](https://github.com/Randsw/kubeinfo/commit/be83bb1c3e47cddebbbf1623f2aec20a48816566))
+
 ## [0.3.1-develop.4](https://github.com/Randsw/kubeinfo/compare/0.3.1-develop.3...0.3.1-develop.4) (2023-05-17)
 
 
