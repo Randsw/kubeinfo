@@ -18,6 +18,7 @@ type NodeRespose struct {
 	OsImage           string `json:"osimage"`
 }
 
+// NamespaceRespose is represenatation of kubernetes namespace count
 type NamespaceRespose struct {
 	NamespaceNumber int `json:"NamespaceNumber"`
 }

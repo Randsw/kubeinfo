@@ -1,3 +1,10 @@
+## [1.0.2-develop.1](https://github.com/Randsw/kubeinfo/compare/1.0.1...1.0.2-develop.1) (2023-05-18)
+
+
+### 🛠 Fixes
+
+* **struct:** Add comment to NamespaceResponce struct ([4e51aec](https://github.com/Randsw/kubeinfo/commit/4e51aec1b4e281fac3ffadeb35b4882937e6eb12))
+
 ## [1.0.1](https://github.com/Randsw/kubeinfo/compare/1.0.0...1.0.1) (2023-05-18)
 
 
