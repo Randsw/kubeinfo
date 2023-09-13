@@ -35,7 +35,7 @@ jobs:
 
       - name: Get changed files in the docs folder
         id: changed-files-helm-chart
-        uses: tj-actions/changed-files@v35
+        uses: tj-actions/changed-files@v39
         with:
           files: helm-chart/kubeinfo-backend/*.{yaml,tpl}
 
