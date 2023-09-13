@@ -6,7 +6,7 @@ require (
 	github.com/fluxcd/helm-controller/api v0.36.0
 	github.com/fluxcd/kustomize-controller/api v1.1.0
 	github.com/gorilla/mux v1.8.0
-	github.com/prometheus/client_golang v1.15.1
+	github.com/prometheus/client_golang v1.16.0
 	github.com/randsw/cascadescenariocontroller v0.0.0-20220708134100-ae9c30dea846
 	go.uber.org/zap v1.24.0
 	k8s.io/api v0.27.4
@@ -43,7 +43,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/client_model v0.4.0 // indirect
 	github.com/prometheus/common v0.42.0 // indirect
-	github.com/prometheus/procfs v0.9.0 // indirect
+	github.com/prometheus/procfs v0.10.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
