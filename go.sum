@@ -20,8 +20,8 @@ github.com/evanphx/json-patch v4.12.0+incompatible h1:4onqiflcdA9EOZ4RxV643DvftH
 github.com/evanphx/json-patch v4.12.0+incompatible/go.mod h1:50XU6AFN0ol/bzJsmQLiYLvXMP4fmwYFNcr97nuDLSk=
 github.com/fluxcd/helm-controller/api v0.36.0 h1:V48f/9W2Pv3LETREaCs7jkLh1LRI6J51kKY2UzUZjvQ=
 github.com/fluxcd/helm-controller/api v0.36.0/go.mod h1:zkcRy3PxG0NoxSY5SjiSA5tWOGa6spIbWsChQY8FXqM=
-github.com/fluxcd/kustomize-controller/api v0.35.1 h1:l7AndDJXVLZcCHmEIRXU9ksWInlP6SjFtHQH1SC7++c=
-github.com/fluxcd/kustomize-controller/api v0.35.1/go.mod h1:hrxVOUss0om4mg+ykMYtH4CgLuM2RReSPf0hG9e0b18=
+github.com/fluxcd/kustomize-controller/api v1.1.0 h1:FrFdRdlPczXTolOMt/HsY6rf1tWEYBoF2uJOISx8fpg=
+github.com/fluxcd/kustomize-controller/api v1.1.0/go.mod h1:FHJTX6c0+CznUNGMol5+Uc4lQsYRxWgpmIRK/xDCghA=
 github.com/fluxcd/pkg/apis/kustomize v1.1.1 h1:MSGn4z0R9PptmoPFHnx2nEZ8Jtl1sKfw0cuDQY2HYwM=
 github.com/fluxcd/pkg/apis/kustomize v1.1.1/go.mod h1:0pCu0ecIY+ZM0iE/hOHYwCMZ3b0SpBrjJ1SH3FFyYdE=
 github.com/fluxcd/pkg/apis/meta v1.1.2 h1:Unjo7hxadtB2dvGpeFqZZUdsjpRA08YYSBb7dF2WIAM=
