@@ -3,6 +3,21 @@ entries:
   kubeinfo-backend:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-09-14T14:23:14.851274903Z"
+    description: Backend for kubeinfo. An application that get information about several
+      resources(including CRD) in kubernetes cluster
+    digest: 79a709bce41ed0bc12f71c3ec5fd8b77c1d451ddcfaa8c6f7893bda480457196
+    maintainers:
+    - email: randsw06@gmail.com
+      name: Randsw
+      url: https://github.com/Randsw/kubeinfo
+    name: kubeinfo-backend
+    type: application
+    urls:
+    - https://github.com/Randsw/kubeinfo/releases/download/kubeinfo-backend-0.1.15/kubeinfo-backend-0.1.15.tgz
+    version: 0.1.15
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-09-14T13:50:27.673553184Z"
     description: Backend for kubeinfo. An application that get information about several
       resources(including CRD) in kubernetes cluster
@@ -135,4 +150,4 @@ entries:
     urls:
     - https://github.com/Randsw/kubeinfo/releases/download/kubeinfo-backend-0.1.4/kubeinfo-backend-0.1.4.tgz
     version: 0.1.4
-generated: "2023-09-14T13:50:27.673673391Z"
+generated: "2023-09-14T14:23:14.851337004Z"
