@@ -40,6 +40,7 @@ func main() {
 	if envvar := os.Getenv("API_ADDRESS"); len(envvar) > 0 {
 		servingAddress = envvar
 	}
+	// Construct serving endpoint
 	servingAt := servingAddress + ":" + servingPort
 	logger.Info("Start serving http request...", zap.String("address", servingAt))
 	//Start app
