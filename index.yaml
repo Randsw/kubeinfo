@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   kubeinfo-backend:
   - apiVersion: v2
+    appVersion: latest
+    created: "2023-09-14T10:21:41.775417893Z"
+    description: Backend for kubeinfo. An application that get information about several
+      resources in kubernetes cluster
+    digest: d30e22e23f8c6ddda13fefcfcc71c76a947cbbba0dc0ec0a3edd8ab77344f18f
+    maintainers:
+    - email: randsw06@gmail.com
+      name: Randsw
+      url: https://github.com/Randsw/kubeinfo
+    name: kubeinfo-backend
+    type: application
+    urls:
+    - https://github.com/Randsw/kubeinfo/releases/download/kubeinfo-backend-0.1.9/kubeinfo-backend-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
     appVersion: 1.0.2
     created: "2023-09-14T08:30:53.315033479Z"
     description: Backend for kubeinfo. An application that get information about several
@@ -75,4 +90,4 @@ entries:
     urls:
     - https://github.com/Randsw/kubeinfo/releases/download/kubeinfo-backend-0.1.4/kubeinfo-backend-0.1.4.tgz
     version: 0.1.4
-generated: "2023-09-14T08:30:53.315051479Z"
+generated: "2023-09-14T10:21:41.775538695Z"
