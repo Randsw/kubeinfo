@@ -39,7 +39,6 @@ jobs:
         id: changed-files-helm-chart
         uses: tj-actions/changed-files@v39
         with:
-          files: helm-chart/kubeinfo-backend/*.{yaml,tpl}
           files_yaml: |
             helm:
               - helm-chart/kubeinfo-backend/*.{yaml,tpl}
@@ -79,7 +78,6 @@ jobs:
         id: changed-files-helm-chart
         uses: tj-actions/changed-files@v39
         with:
-          files: helm-chart/kubeinfo-backend/*.{yaml,tpl}
           files_yaml: |
             helm:
               - helm-chart/kubeinfo-backend/*.{yaml,tpl}
