@@ -5,13 +5,13 @@ on:
       - 'develop'
       - 'main'
     paths:
-      - 'helm-chart/kubeinfo-backend/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.yaml'
   pull_request:
     branches:
       - 'develop'
       - 'main'
     paths:
-      - 'helm-chart/kubeinfo-backend/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.yaml'
 permissions:
   contents: write
 jobs:
