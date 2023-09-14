@@ -79,12 +79,24 @@ jobs:
             git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
         if: github.ref == 'refs/heads/main'
 
-      - name: Bump a Helm Chart Version Locally
-        uses: explorium-ai/bump-helm-chart-action@main
-        with:
-          chart-path: helm-chart/kubeinfo-backend
-          app_version: ""
-          level: patch
+      - name: Install PyBump
+        run: |
+          python3 -m pip install pybump
+        shell: bash
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
+
+      - name: Automated Version Bump
+        id: version-bump
+        run: |
+          pybump bump --file helm-chart/kubeinfo-backend/Chart.yaml --level patch
+        shell: bash
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
+
+      - name: Output Name
+        id: chart-name
+        run: |
+          echo "::set-output name=chart::$(basename helm-chart/kubeinfo-backend)"
+        shell: bash
         if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
 
       - name: GIT Commit
