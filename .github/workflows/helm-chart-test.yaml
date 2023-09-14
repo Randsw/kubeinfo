@@ -83,7 +83,7 @@ jobs:
         uses: explorium-ai/bump-helm-chart-action@main
         with:
           chart-path: helm-chart/kubeinfo-backend
-          app_version: false
+          app_version: ""
           level: patch
         if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
 
