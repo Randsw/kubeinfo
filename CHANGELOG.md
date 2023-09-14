@@ -1,3 +1,33 @@
+## [1.0.3](https://github.com/Randsw/kubeinfo/compare/1.0.2...1.0.3) (2023-09-14)
+
+
+### 🦊 CI/CD
+
+* Add dependabot ([128d568](https://github.com/Randsw/kubeinfo/commit/128d568a0d49ac09ecd69227f055c3aefbbb4dbd))
+
+
+### 🛠 Fixes
+
+* Test dependabot update values.yaml in helm chart from chcr.io ([1218f7f](https://github.com/Randsw/kubeinfo/commit/1218f7f1c9b6f1435dd2725111146c072b4b2ef2))
+
+
+### Other
+
+* **deps:** bump actions/checkout from 3 to 4 ([ea2eb98](https://github.com/Randsw/kubeinfo/commit/ea2eb98cfff7d1600ba260e1fbbaddfc5e57e8fe))
+* **deps:** bump docker/build-push-action from 4 to 5 ([b97ac01](https://github.com/Randsw/kubeinfo/commit/b97ac01aba999cc5e698e1e6d1913d5c8e52c4d5))
+* **deps:** bump docker/login-action from 2 to 3 ([46a2c1c](https://github.com/Randsw/kubeinfo/commit/46a2c1c3d34e208cabb9f1218c4f92a634fe8d73))
+* **deps:** bump docker/metadata-action from 4 to 5 ([2784a77](https://github.com/Randsw/kubeinfo/commit/2784a772b343ab183dcb3c7dc003c1f91fd66bf6))
+* **deps:** bump docker/setup-buildx-action from 2 to 3 ([836a24f](https://github.com/Randsw/kubeinfo/commit/836a24f09aaac3428a63904a2b0adc2d14c94e85))
+* **deps:** bump github.com/fluxcd/helm-controller/api ([fcbf932](https://github.com/Randsw/kubeinfo/commit/fcbf932fd1e461d613cef340f3bfbf55a5ed324d))
+* **deps:** bump github.com/fluxcd/kustomize-controller/api ([c45a4f7](https://github.com/Randsw/kubeinfo/commit/c45a4f77e9911da8fc3d7efc8758353c82997f35))
+* **deps:** bump github.com/prometheus/client_golang ([3a7a923](https://github.com/Randsw/kubeinfo/commit/3a7a9233c03426ffbaa977e17ed466fd8fd54bf5))
+* **deps:** bump go.uber.org/zap from 1.24.0 to 1.25.0 ([3e6714c](https://github.com/Randsw/kubeinfo/commit/3e6714c4cf958e82930e12fc924235e72f9bf100))
+* **deps:** bump golang from 1.19 to 1.21 ([99ba164](https://github.com/Randsw/kubeinfo/commit/99ba16475e245926119cff43cd8feb1f29f73533))
+* **deps:** bump helm/chart-testing-action from 2.3.1 to 2.4.0 ([5cb2aac](https://github.com/Randsw/kubeinfo/commit/5cb2aac5df0315fdd70666bbb88bd883ef760ea1))
+* **deps:** bump helm/kind-action from 1.5.0 to 1.8.0 ([67305ab](https://github.com/Randsw/kubeinfo/commit/67305aba13d4769ca82c1c7620ff15677daa60cb))
+* **deps:** bump k8s.io/client-go from 0.26.3 to 0.28.1 ([6808ab2](https://github.com/Randsw/kubeinfo/commit/6808ab2f0a420c047234d03129626ae2dba06ad3))
+* **deps:** bump tj-actions/changed-files from 35 to 39 ([3f9cd6c](https://github.com/Randsw/kubeinfo/commit/3f9cd6cc1156167be0c8d6c5ac5ab162a0de2db4))
+
 ## [1.0.2](https://github.com/Randsw/kubeinfo/compare/1.0.1...1.0.2) (2023-05-18)
 
 
