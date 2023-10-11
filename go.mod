@@ -3,7 +3,7 @@ module github.com/randsw/kubeinfo
 go 1.19
 
 require (
-	github.com/fluxcd/helm-controller/api v0.36.1
+	github.com/fluxcd/helm-controller/api v0.36.2
 	github.com/fluxcd/kustomize-controller/api v1.1.0
 	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v1.17.0
