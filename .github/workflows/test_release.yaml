@@ -19,7 +19,7 @@ on:
       - '**.sum'
       - 'Dockerfile'
 env:
-  GO_VERSION: 1.19.1
+  GO_VERSION: 1.21
 jobs:
     # build workflow
     Test:
