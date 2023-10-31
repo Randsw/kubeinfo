@@ -1,3 +1,27 @@
+## [1.1.0](https://github.com/Randsw/kubeinfo/compare/1.0.4...1.1.0) (2023-10-31)
+
+
+### 🦊 CI/CD
+
+* Chart release only on push. ([d4f19be](https://github.com/Randsw/kubeinfo/commit/d4f19be4ab4830def1d49f8b5d80ad49d022e4ae))
+
+
+### 🚀 Features
+
+* Display tag, hash and date of commit in /healthz endpoint ([6541d9d](https://github.com/Randsw/kubeinfo/commit/6541d9de52887396a1edda708a63f3b5d404df4e))
+
+
+### 🛠 Fixes
+
+* Fix app name in status ([13fc6ee](https://github.com/Randsw/kubeinfo/commit/13fc6ee871172b1ea1fb299f8ce9ea7d8ff216fe))
+
+
+### Other
+
+* **deps:** bump actions/setup-node from 3 to 4 ([9ea8a79](https://github.com/Randsw/kubeinfo/commit/9ea8a797c3b3f4cb9ef5f9eec95409bbbcb2e72d))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([29552e2](https://github.com/Randsw/kubeinfo/commit/29552e24350a4b0c96fcdbe9cb0583995c4f1ece))
+* **deps:** bump tj-actions/changed-files from 39 to 40 ([02323f2](https://github.com/Randsw/kubeinfo/commit/02323f2e5ea5ff3e764a491e5095f36f955ffb5d))
+
 ## [1.0.4](https://github.com/Randsw/kubeinfo/compare/1.0.3...1.0.4) (2023-10-24)
 
 
