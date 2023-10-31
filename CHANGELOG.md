@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/Randsw/kubeinfo/compare/1.1.4...1.1.5) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Try to sovle problem with empty status field ([9d01c24](https://github.com/Randsw/kubeinfo/commit/9d01c249784e2108daae88124a911eda1c6f61db))
+
 ## [1.1.4](https://github.com/Randsw/kubeinfo/compare/1.1.3...1.1.4) (2023-10-31)
 
 
