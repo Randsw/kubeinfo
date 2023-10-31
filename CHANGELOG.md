@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/Randsw/kubeinfo/compare/1.1.6...1.1.7) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Remove .git from .dockerignore ([07f1930](https://github.com/Randsw/kubeinfo/commit/07f193010b3b0ae8de96a6b60c1cbff9a5afb6dc))
+
 ## [1.1.6](https://github.com/Randsw/kubeinfo/compare/1.1.5...1.1.6) (2023-10-31)
 
 
