@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/Randsw/kubeinfo/compare/1.1.1...1.1.2) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Configure git to trust the workspace despite the different owner ([0d96e5a](https://github.com/Randsw/kubeinfo/commit/0d96e5a4565356b3e4e151e58bb83fad80dc54cb))
+* Rename field in info ([5397d8e](https://github.com/Randsw/kubeinfo/commit/5397d8e8f2ff60ee6dd0f7f60206be60e43fe8cf))
+
 ## [1.1.1](https://github.com/Randsw/kubeinfo/compare/1.1.0...1.1.1) (2023-10-31)
 
 
