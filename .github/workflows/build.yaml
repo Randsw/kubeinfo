@@ -17,6 +17,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Configure git to trust the workspace despite the different owner
+        run: git config --global --add safe.directory $(realpath .)
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
