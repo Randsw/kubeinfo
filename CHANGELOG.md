@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Randsw/kubeinfo/compare/1.1.2...1.1.3) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Try to get tag and hash ([8493642](https://github.com/Randsw/kubeinfo/commit/8493642bc13f3e17f8ac4e6c68617fca146ab688))
+
 ## [1.1.2](https://github.com/Randsw/kubeinfo/compare/1.1.1...1.1.2) (2023-10-31)
 
 
