@@ -11,8 +11,6 @@ RUN go mod download
 
 COPY . .
 
-RUN ls -lah
-
 # Build
 RUN make build
 
