@@ -19,8 +19,6 @@ jobs:
           fetch-depth: 0
       - name: Configure git to trust the workspace despite the different owner
         run: git config --global --add safe.directory $(realpath .)
-      - name: Test
-        run: git describe --abbrev=0 --tags --always
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
@@ -41,6 +39,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test
+        run: ls -lah
       - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v5
         with:

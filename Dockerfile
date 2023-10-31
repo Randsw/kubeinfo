@@ -11,6 +11,11 @@ RUN go mod download
 
 COPY . .
 
+RUN ls -lah
+
+RUN make test
+
+RUN make pwd
 # Build
 RUN make build
 
