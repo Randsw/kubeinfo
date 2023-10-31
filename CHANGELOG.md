@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Randsw/kubeinfo/compare/1.1.3...1.1.4) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Downgrade checkout version in build ([9541d01](https://github.com/Randsw/kubeinfo/commit/9541d01845e8dbbfb0a75269e682d80667f061d2))
+
 ## [1.1.3](https://github.com/Randsw/kubeinfo/compare/1.1.2...1.1.3) (2023-10-31)
 
 
