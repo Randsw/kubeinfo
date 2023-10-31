@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Randsw/kubeinfo/compare/1.1.0...1.1.1) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Fetch all repo to build container with nesessary variables ([a80cf41](https://github.com/Randsw/kubeinfo/commit/a80cf415a78062990b71b61be73b8deee61de53c))
+
 ## [1.1.0](https://github.com/Randsw/kubeinfo/compare/1.0.4...1.1.0) (2023-10-31)
 
 
