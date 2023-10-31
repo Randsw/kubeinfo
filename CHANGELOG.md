@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/Randsw/kubeinfo/compare/1.1.5...1.1.6) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Huge test ([25ea6b2](https://github.com/Randsw/kubeinfo/commit/25ea6b2e512c84e05b1cea6bb79f46bdfb3934b8))
+
 ## [1.1.5](https://github.com/Randsw/kubeinfo/compare/1.1.4...1.1.5) (2023-10-31)
 
 
