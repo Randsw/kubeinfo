@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o kubeinfo main.go
+RUN make build
 
 # Use distroless as minimal base image to package the kubeinfo binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details

@@ -12,6 +12,12 @@ import (
 	"go.uber.org/zap"
 )
 
+var (
+	tag  string
+	hash string
+	date string
+)
+
 func errorResponse(w http.ResponseWriter, err error, reqresource string) {
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
@@ -63,7 +69,18 @@ func response(w http.ResponseWriter, resourceinfo interface{}, resoursename stri
 // HTTP Handlers
 
 func GetHealth(w http.ResponseWriter, r *http.Request) {
-	_, _ = w.Write([]byte("Ok. KubeInfo."))
+	enc := json.NewEncoder(w)
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	resp := map[string]string{
+		"name":   "Kubeinfo",
+		"status": "OK",
+		"tag":    tag,
+		"hash":   hash,
+		"date":   date,
+	}
+	if err := enc.Encode(resp); err != nil {
+		logger.Error("Error while encoding JSON response", zap.String("err", err.Error()))
+	}
 }
 
 func Metrics(w http.ResponseWriter, r *http.Request) {
