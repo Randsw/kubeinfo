@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/randsw/kubeinfo/handlers"
@@ -42,9 +43,17 @@ func main() {
 	}
 	// Construct serving endpoint
 	servingAt := servingAddress + ":" + servingPort
+	srv := &http.Server{
+		Addr: servingAt,
+		// Good practice to set timeouts to avoid Slowloris attacks.
+		WriteTimeout: time.Second * 15,
+		ReadTimeout:  time.Second * 15,
+		IdleTimeout:  time.Second * 60,
+		Handler:      mux, // Pass our instance of gorilla/mux in.
+	}
 	logger.Info("Start serving http request...", zap.String("address", servingAt))
 	//Start app
-	err := http.ListenAndServe(servingAt, mux)
+	err := srv.ListenAndServe()
 	if err != nil {
 		logger.Error("Fail to start http server", zap.String("err", err.Error()))
 	}
