@@ -1,3 +1,28 @@
+## [1.1.8](https://github.com/Randsw/kubeinfo/compare/1.1.7...1.1.8) (2023-11-01)
+
+
+### 💈 Style
+
+* Remove debug part ([4f5e57c](https://github.com/Randsw/kubeinfo/commit/4f5e57ced63f8d9acefc00c8b15a9cddc21af403))
+
+
+### 🦊 CI/CD
+
+* Bump chart-testing-action to v2.6.0 ([3f6f678](https://github.com/Randsw/kubeinfo/commit/3f6f6782589a45c3ffc0359df8c0e3a28987837a))
+* Downgrade chart-testing to v3.8.0 ([2e5eb81](https://github.com/Randsw/kubeinfo/commit/2e5eb81ffe8e26860792e2c9d53e5313beaec331))
+* Downgrade chart-testing-action to v2.4.0 ([6880e27](https://github.com/Randsw/kubeinfo/commit/6880e2706b2b7bac2403d4b0a75c25335f885fec))
+
+
+### 🛠 Fixes
+
+* Add timeouts to http server ([a759aaf](https://github.com/Randsw/kubeinfo/commit/a759aaf7d8d39c9bb38452e2bfbd8f34c762b733))
+
+
+### Other
+
+* **deps:** bump helm/chart-testing-action from 2.4.0 to 2.5.0 ([9e2bc08](https://github.com/Randsw/kubeinfo/commit/9e2bc081d38bf1ccc8b2683a986cf03fce06fd66))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([37da241](https://github.com/Randsw/kubeinfo/commit/37da241039011c2c58a2280bad310b49f83a4c50))
+
 ## [1.1.7](https://github.com/Randsw/kubeinfo/compare/1.1.6...1.1.7) (2023-10-31)
 
 
