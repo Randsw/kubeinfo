@@ -1,3 +1,24 @@
+## [1.2.0-develop.1](https://github.com/Randsw/kubeinfo/compare/1.1.8...1.2.0-develop.1) (2023-11-29)
+
+
+### 🦊 CI/CD
+
+* use latest version of chart-test ([9b8bc65](https://github.com/Randsw/kubeinfo/commit/9b8bc65f8da83a420008dccc5ddabd1b6a583bcf))
+
+
+### 🚀 Features
+
+* **api:** Add swagger page ([e7b36ca](https://github.com/Randsw/kubeinfo/commit/e7b36ca671df68fb71fa4da1fcc240729496a6a7))
+
+
+### Other
+
+* **deps:** bump github.com/gorilla/mux from 1.8.0 to 1.8.1 ([490825c](https://github.com/Randsw/kubeinfo/commit/490825c3ea1d37d5d43a53d58c1978728b82e3cb))
+* **deps:** bump helm/chart-releaser-action from 1.5.0 to 1.6.0 ([84649c8](https://github.com/Randsw/kubeinfo/commit/84649c8ee149d63bf8ab2a2461963dd2369a107e))
+* **deps:** bump helm/chart-testing-action from 2.6.0 to 2.6.1 ([9293815](https://github.com/Randsw/kubeinfo/commit/929381522f7f91f66156a7a1ad13667544d2bf8d))
+* **deps:** bump k8s.io/client-go from 0.28.3 to 0.28.4 ([6364b48](https://github.com/Randsw/kubeinfo/commit/6364b48aaa02274d8e58f361c0584bdd512a039d))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([92b28f9](https://github.com/Randsw/kubeinfo/commit/92b28f9d2031b3786875ca09c8ada6a0c87da84e))
+
 ## [1.1.8](https://github.com/Randsw/kubeinfo/compare/1.1.7...1.1.8) (2023-11-01)
 
 
