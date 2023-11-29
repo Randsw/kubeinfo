@@ -1,3 +1,187 @@
+## [1.1.8](https://github.com/Randsw/kubeinfo/compare/1.1.7...1.1.8) (2023-11-01)
+
+
+### 💈 Style
+
+* Remove debug part ([4f5e57c](https://github.com/Randsw/kubeinfo/commit/4f5e57ced63f8d9acefc00c8b15a9cddc21af403))
+
+
+### 🦊 CI/CD
+
+* Bump chart-testing-action to v2.6.0 ([3f6f678](https://github.com/Randsw/kubeinfo/commit/3f6f6782589a45c3ffc0359df8c0e3a28987837a))
+* Downgrade chart-testing to v3.8.0 ([2e5eb81](https://github.com/Randsw/kubeinfo/commit/2e5eb81ffe8e26860792e2c9d53e5313beaec331))
+* Downgrade chart-testing-action to v2.4.0 ([6880e27](https://github.com/Randsw/kubeinfo/commit/6880e2706b2b7bac2403d4b0a75c25335f885fec))
+
+
+### 🛠 Fixes
+
+* Add timeouts to http server ([a759aaf](https://github.com/Randsw/kubeinfo/commit/a759aaf7d8d39c9bb38452e2bfbd8f34c762b733))
+
+
+### Other
+
+* **deps:** bump helm/chart-testing-action from 2.4.0 to 2.5.0 ([9e2bc08](https://github.com/Randsw/kubeinfo/commit/9e2bc081d38bf1ccc8b2683a986cf03fce06fd66))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([37da241](https://github.com/Randsw/kubeinfo/commit/37da241039011c2c58a2280bad310b49f83a4c50))
+
+## [1.1.7](https://github.com/Randsw/kubeinfo/compare/1.1.6...1.1.7) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Remove .git from .dockerignore ([07f1930](https://github.com/Randsw/kubeinfo/commit/07f193010b3b0ae8de96a6b60c1cbff9a5afb6dc))
+
+## [1.1.6](https://github.com/Randsw/kubeinfo/compare/1.1.5...1.1.6) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Huge test ([25ea6b2](https://github.com/Randsw/kubeinfo/commit/25ea6b2e512c84e05b1cea6bb79f46bdfb3934b8))
+
+## [1.1.5](https://github.com/Randsw/kubeinfo/compare/1.1.4...1.1.5) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Try to sovle problem with empty status field ([9d01c24](https://github.com/Randsw/kubeinfo/commit/9d01c249784e2108daae88124a911eda1c6f61db))
+
+## [1.1.4](https://github.com/Randsw/kubeinfo/compare/1.1.3...1.1.4) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Downgrade checkout version in build ([9541d01](https://github.com/Randsw/kubeinfo/commit/9541d01845e8dbbfb0a75269e682d80667f061d2))
+
+## [1.1.3](https://github.com/Randsw/kubeinfo/compare/1.1.2...1.1.3) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Try to get tag and hash ([8493642](https://github.com/Randsw/kubeinfo/commit/8493642bc13f3e17f8ac4e6c68617fca146ab688))
+
+## [1.1.2](https://github.com/Randsw/kubeinfo/compare/1.1.1...1.1.2) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Configure git to trust the workspace despite the different owner ([0d96e5a](https://github.com/Randsw/kubeinfo/commit/0d96e5a4565356b3e4e151e58bb83fad80dc54cb))
+* Rename field in info ([5397d8e](https://github.com/Randsw/kubeinfo/commit/5397d8e8f2ff60ee6dd0f7f60206be60e43fe8cf))
+
+## [1.1.1](https://github.com/Randsw/kubeinfo/compare/1.1.0...1.1.1) (2023-10-31)
+
+
+### 🛠 Fixes
+
+* Fetch all repo to build container with nesessary variables ([a80cf41](https://github.com/Randsw/kubeinfo/commit/a80cf415a78062990b71b61be73b8deee61de53c))
+
+## [1.1.0](https://github.com/Randsw/kubeinfo/compare/1.0.4...1.1.0) (2023-10-31)
+
+
+### 🦊 CI/CD
+
+* Chart release only on push. ([d4f19be](https://github.com/Randsw/kubeinfo/commit/d4f19be4ab4830def1d49f8b5d80ad49d022e4ae))
+
+
+### 🚀 Features
+
+* Display tag, hash and date of commit in /healthz endpoint ([6541d9d](https://github.com/Randsw/kubeinfo/commit/6541d9de52887396a1edda708a63f3b5d404df4e))
+
+
+### 🛠 Fixes
+
+* Fix app name in status ([13fc6ee](https://github.com/Randsw/kubeinfo/commit/13fc6ee871172b1ea1fb299f8ce9ea7d8ff216fe))
+
+
+### Other
+
+* **deps:** bump actions/setup-node from 3 to 4 ([9ea8a79](https://github.com/Randsw/kubeinfo/commit/9ea8a797c3b3f4cb9ef5f9eec95409bbbcb2e72d))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([29552e2](https://github.com/Randsw/kubeinfo/commit/29552e24350a4b0c96fcdbe9cb0583995c4f1ece))
+* **deps:** bump tj-actions/changed-files from 39 to 40 ([02323f2](https://github.com/Randsw/kubeinfo/commit/02323f2e5ea5ff3e764a491e5095f36f955ffb5d))
+
+## [1.0.4](https://github.com/Randsw/kubeinfo/compare/1.0.3...1.0.4) (2023-10-24)
+
+
+### 📔 Docs
+
+* **helm:** Edit chart description ([2f4209a](https://github.com/Randsw/kubeinfo/commit/2f4209ae843c43e1d9ee6f6de8a6dc99998feb25))
+
+
+### 🦊 CI/CD
+
+* **helm:** Bump helm chart patch version if not manually bumped ([8d0515f](https://github.com/Randsw/kubeinfo/commit/8d0515fa701b17c4b0813bd9100cb4ff8e5c0110))
+* **helm:** Bump version if user forget to do it manually ([424e603](https://github.com/Randsw/kubeinfo/commit/424e603ee0623ef9f073f2dc9e9d6cd847fe4f13))
+* **helm:** Check manual helm chart version update ([3f5d477](https://github.com/Randsw/kubeinfo/commit/3f5d4774fa9ab6d549fa975203ed3f4880f9aa18))
+* **helm:** Fix gh-action bump arguments ([16e45cc](https://github.com/Randsw/kubeinfo/commit/16e45ccaa41438648b96bbd11d76203fb50cf1c7))
+* **helm:** Fix missing git configuration ([dec3e16](https://github.com/Randsw/kubeinfo/commit/dec3e16334da493327a6950c522936a8ab17142a))
+* **helm:** Fix wildcard for yaml files in helm chart directory ([d2fc285](https://github.com/Randsw/kubeinfo/commit/d2fc2850fcb131ce49e0f8dfcdf3a73d00b06b81))
+* **helm:** Refactor github actions ([9e808df](https://github.com/Randsw/kubeinfo/commit/9e808df1fba4d486e705873b7be479f807986cd6))
+* **helm:** Remove unused commands in github-actions ([af21915](https://github.com/Randsw/kubeinfo/commit/af21915c3df41e8d41ad0fa96b6928e6d04cd9d2))
+* **helm:** Test change only in values.yaml ([729495e](https://github.com/Randsw/kubeinfo/commit/729495efd070d3d4ca51bfa4d80d22a0ed245d76))
+* **helm:** Use action to push. When push with GITHUB_TOKEN action is not triggered. Use PAT instead ([0c6ec14](https://github.com/Randsw/kubeinfo/commit/0c6ec1458049d2cc6a1f5aa9894b3632eafa90a8))
+* **helm:** Use explicit step to bump helm chart version ([dded5c8](https://github.com/Randsw/kubeinfo/commit/dded5c8ae90712729eb050048a97acc70d8ed74a))
+* **helm:** Use PAT then checkout. Fix version display in commit message ([ea5a6db](https://github.com/Randsw/kubeinfo/commit/ea5a6dbb8b1cbc5bbb2ce033d06b946079a1849c))
+
+
+### 🛠 Fixes
+
+* **logger:** Fix logger caller func - skip support logger function ([14c9d28](https://github.com/Randsw/kubeinfo/commit/14c9d283c06233e7e64d5118c8746f8fe034fcee))
+
+
+### Other
+
+* **deps:** bump github.com/fluxcd/helm-controller/api ([44e4203](https://github.com/Randsw/kubeinfo/commit/44e4203cead93290c0ec8e27e7e9ea3860012384))
+* **deps:** bump github.com/fluxcd/helm-controller/api ([50c7275](https://github.com/Randsw/kubeinfo/commit/50c72751c3babf5c897a8d3e563cbd96261de207))
+* **deps:** bump github.com/fluxcd/kustomize-controller/api ([3f42809](https://github.com/Randsw/kubeinfo/commit/3f428099c20f66c3c9308b9b0190738b1760bcdd))
+* **deps:** bump github.com/prometheus/client_golang ([ca60dea](https://github.com/Randsw/kubeinfo/commit/ca60dea2d80460e182ae4441a89cc32fd2be1407))
+* **deps:** bump go.uber.org/zap from 1.25.0 to 1.26.0 ([2004267](https://github.com/Randsw/kubeinfo/commit/20042674d48ad1202d88a5fb2bebed269c70b6ed))
+* **deps:** bump k8s.io/api from 0.28.1 to 0.28.2 ([6865d09](https://github.com/Randsw/kubeinfo/commit/6865d09cc14422b89279ff2fef9bdaf02ffa704e))
+* **deps:** bump k8s.io/api from 0.28.2 to 0.28.3 ([3f2cda2](https://github.com/Randsw/kubeinfo/commit/3f2cda2158a0d4a78e55111b34a39fead76b5598))
+* **deps:** bump k8s.io/client-go from 0.28.1 to 0.28.2 ([8a63fc1](https://github.com/Randsw/kubeinfo/commit/8a63fc1faf7543d88b5eca6a5849283254613958))
+* **deps:** bump k8s.io/client-go from 0.28.2 to 0.28.3 ([141643f](https://github.com/Randsw/kubeinfo/commit/141643fbb0b3e466536898aff44e2470435a3dbd))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([1b6ed98](https://github.com/Randsw/kubeinfo/commit/1b6ed9872a5af69174e29cf546a27b47099d0fc2))
+* **deps:** Update gh-action go 1.to 21 ([e9b6da8](https://github.com/Randsw/kubeinfo/commit/e9b6da8e27d0910e95d0adce4bcbdc6714d0cfa5))
+
+## [1.0.3](https://github.com/Randsw/kubeinfo/compare/1.0.2...1.0.3) (2023-09-14)
+
+
+### 🦊 CI/CD
+
+* Add dependabot ([128d568](https://github.com/Randsw/kubeinfo/commit/128d568a0d49ac09ecd69227f055c3aefbbb4dbd))
+
+
+### 🛠 Fixes
+
+* Test dependabot update values.yaml in helm chart from chcr.io ([1218f7f](https://github.com/Randsw/kubeinfo/commit/1218f7f1c9b6f1435dd2725111146c072b4b2ef2))
+
+
+### Other
+
+* **deps:** bump actions/checkout from 3 to 4 ([ea2eb98](https://github.com/Randsw/kubeinfo/commit/ea2eb98cfff7d1600ba260e1fbbaddfc5e57e8fe))
+* **deps:** bump docker/build-push-action from 4 to 5 ([b97ac01](https://github.com/Randsw/kubeinfo/commit/b97ac01aba999cc5e698e1e6d1913d5c8e52c4d5))
+* **deps:** bump docker/login-action from 2 to 3 ([46a2c1c](https://github.com/Randsw/kubeinfo/commit/46a2c1c3d34e208cabb9f1218c4f92a634fe8d73))
+* **deps:** bump docker/metadata-action from 4 to 5 ([2784a77](https://github.com/Randsw/kubeinfo/commit/2784a772b343ab183dcb3c7dc003c1f91fd66bf6))
+* **deps:** bump docker/setup-buildx-action from 2 to 3 ([836a24f](https://github.com/Randsw/kubeinfo/commit/836a24f09aaac3428a63904a2b0adc2d14c94e85))
+* **deps:** bump github.com/fluxcd/helm-controller/api ([fcbf932](https://github.com/Randsw/kubeinfo/commit/fcbf932fd1e461d613cef340f3bfbf55a5ed324d))
+* **deps:** bump github.com/fluxcd/kustomize-controller/api ([c45a4f7](https://github.com/Randsw/kubeinfo/commit/c45a4f77e9911da8fc3d7efc8758353c82997f35))
+* **deps:** bump github.com/prometheus/client_golang ([3a7a923](https://github.com/Randsw/kubeinfo/commit/3a7a9233c03426ffbaa977e17ed466fd8fd54bf5))
+* **deps:** bump go.uber.org/zap from 1.24.0 to 1.25.0 ([3e6714c](https://github.com/Randsw/kubeinfo/commit/3e6714c4cf958e82930e12fc924235e72f9bf100))
+* **deps:** bump golang from 1.19 to 1.21 ([99ba164](https://github.com/Randsw/kubeinfo/commit/99ba16475e245926119cff43cd8feb1f29f73533))
+* **deps:** bump helm/chart-testing-action from 2.3.1 to 2.4.0 ([5cb2aac](https://github.com/Randsw/kubeinfo/commit/5cb2aac5df0315fdd70666bbb88bd883ef760ea1))
+* **deps:** bump helm/kind-action from 1.5.0 to 1.8.0 ([67305ab](https://github.com/Randsw/kubeinfo/commit/67305aba13d4769ca82c1c7620ff15677daa60cb))
+* **deps:** bump k8s.io/client-go from 0.26.3 to 0.28.1 ([6808ab2](https://github.com/Randsw/kubeinfo/commit/6808ab2f0a420c047234d03129626ae2dba06ad3))
+* **deps:** bump tj-actions/changed-files from 35 to 39 ([3f9cd6c](https://github.com/Randsw/kubeinfo/commit/3f9cd6cc1156167be0c8d6c5ac5ab162a0de2db4))
+
+## [1.0.2](https://github.com/Randsw/kubeinfo/compare/1.0.1...1.0.2) (2023-05-18)
+
+
+### 🛠 Fixes
+
+* **struct:** Add comment to NamespaceResponce struct ([4e51aec](https://github.com/Randsw/kubeinfo/commit/4e51aec1b4e281fac3ffadeb35b4882937e6eb12))
+
+
+### Other
+
+* **release:** 1.0.2-develop.1 ([2916f6b](https://github.com/Randsw/kubeinfo/commit/2916f6b28f50de166beba50a837eebcdc1f3d20f))
+
 ## [1.0.2-develop.1](https://github.com/Randsw/kubeinfo/compare/1.0.1...1.0.2-develop.1) (2023-05-18)
 
 

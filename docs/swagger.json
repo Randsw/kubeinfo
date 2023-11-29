@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Kubeinfo used to get information about k8s cluster component",
+        "title": "Kubeinfo API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "kubeinfo.swagger.io",
+    "basePath": "/",
+    "paths": {
+        "/GetNodes": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get info about nodes in cluster",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/kubeApiResponseStruct.NodeRespose"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "kubeApiResponseStruct.NodeRespose": {
+            "type": "object",
+            "properties": {
+                "contolplanenumber": {
+                    "type": "integer"
+                },
+                "kubernetesversion": {
+                    "type": "string"
+                },
+                "nodenumber": {
+                    "type": "integer"
+                },
+                "osimage": {
+                    "type": "string"
+                },
+                "workernumber": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

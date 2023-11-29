@@ -5,20 +5,21 @@ on:
       - 'develop'
       - 'main'
     paths:
-      - 'helm-chart/kubeinfo-backend/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.yaml'
   pull_request:
     branches:
       - 'develop'
+      - 'main'
     paths:
-      - 'helm-chart/kubeinfo-backend/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.yaml'
 permissions:
   contents: write
 jobs:
-  Lint-test-release:
+  Lint-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -31,42 +32,101 @@ jobs:
           python-version: 3.7
 
       - name: Set up chart-testing
-        uses: helm/chart-testing-action@v2.3.1
+        uses: helm/chart-testing-action@v2.6.1
 
-      - name: Get changed files in the docs folder
+      - name: Get changed files in the helm folder
         id: changed-files-helm-chart
-        uses: tj-actions/changed-files@v35
+        uses: tj-actions/changed-files@v40
         with:
-          files: helm-chart/kubeinfo-backend/*.{yaml,tpl}
-
-      - name: List all changed files
-        id: list-changed-files
-        run: |
-            echo "List all the files that have changed: ${{ steps.changed-files-helm-chart.outputs.all_changed_files }}"
+          files_yaml: |
+            helm:
+              - helm-chart/kubeinfo-backend/*.{yaml,tpl}
+              - '!helm-chart/kubeinfo-backend/Chart.yaml'
 
       - name: Run chart-testing (lint)
         run: ct lint --config ct.yaml --all
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true'
 
       - name: Create kind cluster
-        uses: helm/kind-action@v1.5.0
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
+        uses: helm/kind-action@v1.8.0
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true'
 
       - name: Run chart-testing (install)
         run: ct install --config ct.yaml --all
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true'
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true'
+      
+  Release:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    needs: Lint-test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SEMANTIC_TOKEN }}
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.7
+
+      - name: Get changed files in the helm folder
+        id: changed-files-helm-chart
+        uses: tj-actions/changed-files@v40
+        with:
+          files_yaml: |
+            helm:
+              - helm-chart/kubeinfo-backend/*.{yaml,tpl}
+              - '!helm-chart/kubeinfo-backend/Chart.yaml'
+            chart_version:
+              - 'helm-chart/kubeinfo-backend/Chart.yaml'
+
+      - name: Install PyBump
+        run: |
+          python3 -m pip install pybump
+        shell: bash
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
+
+      - name: Automated Version Bump
+        id: version-bump
+        run: |
+          echo "VER=$(pybump bump --file helm-chart/kubeinfo-backend/Chart.yaml --level patch)" >> $GITHUB_OUTPUT
+        shell: bash
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
+
+      - name: Output Name
+        id: chart-name
+        run: |
+          echo "::set-output name=chart::$(basename helm-chart/kubeinfo-backend)"
+        shell: bash
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
 
       - name: Configure Git
         run: |
             git config user.name "$GITHUB_ACTOR"
             git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true' && github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
+
+      - name: GIT Commit
+        run: |
+          git add helm-chart/kubeinfo-backend/Chart.yaml
+          git commit -m "Automatic bump Helm chart version to ${{ steps.version-bump.outputs.VER }}"
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.SEMANTIC_TOKEN }}
+        if: steps.changed-files-helm-chart.outputs.helm_any_changed == 'true' && steps.changed-files-helm-chart.outputs.chart_version_any_changed != 'true' && github.ref == 'refs/heads/main'
     
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
+        uses: helm/chart-releaser-action@v1.6.0
         with:
             charts_dir: helm-chart
         env:
             CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        if: steps.changed-files-helm-chart.outputs.any_changed == 'true' && github.ref == 'refs/heads/main'
-
+        if: steps.changed-files-helm-chart.outputs.chart_version_any_changed == 'true' && github.ref == 'refs/heads/main'

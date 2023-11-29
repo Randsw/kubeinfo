@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/randsw/kubeinfo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.1.8"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -52,7 +52,7 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-# Probes
+# Application Probes
 livenessProbe:
   httpGet:
     path: "/healthz"
@@ -88,7 +88,7 @@ tolerations: []
 
 affinity: {}
 
-# ClusterRole and ClusterRoleBinding for app
+# ClusterRole and ClusterRoleBinding for application
 clusterroles:
   - enabled: true
     name: "kubeinfo"
@@ -128,7 +128,7 @@ clusterroles:
         - get
         - list
 
-# Prometheus metrics
+# Prometheus metrics configuration
 # Servicemonitor disabled by default
 metrics:
   port: 8080
