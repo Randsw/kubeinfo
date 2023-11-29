@@ -1,3 +1,10 @@
+## [1.2.0-develop.2](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.1...1.2.0-develop.2) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix swagger doc import path ([bcfc455](https://github.com/Randsw/kubeinfo/commit/bcfc455c00b2b086671e76b440e6fe7200d64a2d))
+
 ## [1.2.0-develop.1](https://github.com/Randsw/kubeinfo/compare/1.1.8...1.2.0-develop.1) (2023-11-29)
 
 
