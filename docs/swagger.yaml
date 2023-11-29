@@ -13,7 +13,7 @@ definitions:
       workernumber:
         type: integer
     type: object
-host: kubeinfo.swagger.io
+host: kubeinfo-kubeinfo-backend.kubeinfo.svc
 info:
   contact:
     email: support@swagger.io

@@ -15,7 +15,7 @@
         },
         "version": "1.0"
     },
-    "host": "kubeinfo.swagger.io",
+    "host": "kubeinfo-kubeinfo-backend.kubeinfo.svc",
     "basePath": "/",
     "paths": {
         "/GetNodes": {
