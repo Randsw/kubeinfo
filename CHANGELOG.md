@@ -1,3 +1,10 @@
+## [1.2.0-develop.3](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.2...1.2.0-develop.3) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix api host to execute from container ([f01d4bc](https://github.com/Randsw/kubeinfo/commit/f01d4bcb093609b7f07f0f46ed5044c7b552a0f8))
+
 ## [1.2.0-develop.2](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.1...1.2.0-develop.2) (2023-11-29)
 
 
