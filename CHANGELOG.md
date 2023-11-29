@@ -1,3 +1,10 @@
+## [1.2.0-develop.4](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.3...1.2.0-develop.4) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix router path in swagger ([1467f1a](https://github.com/Randsw/kubeinfo/commit/1467f1a5364f2c678961fe6079f6b879e03e58d1))
+
 ## [1.2.0-develop.3](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.2...1.2.0-develop.3) (2023-11-29)
 
 
