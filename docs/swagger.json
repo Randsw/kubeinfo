@@ -18,7 +18,7 @@
     "host": "kubeinfo-kubeinfo-backend.kubeinfo.svc",
     "basePath": "/",
     "paths": {
-        "/GetNodes": {
+        "/nodes": {
             "get": {
                 "produces": [
                     "application/json"

@@ -27,7 +27,7 @@ info:
   title: Kubeinfo API
   version: "1.0"
 paths:
-  /GetNodes:
+  /nodes:
     get:
       produces:
       - application/json
