@@ -1,0 +1,40 @@
+basePath: /
+definitions:
+  kubeApiResponseStruct.NodeRespose:
+    properties:
+      contolplanenumber:
+        type: integer
+      kubernetesversion:
+        type: string
+      nodenumber:
+        type: integer
+      osimage:
+        type: string
+      workernumber:
+        type: integer
+    type: object
+host: kubeinfo.swagger.io
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: Kubeinfo used to get information about k8s cluster component
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Kubeinfo API
+  version: "1.0"
+paths:
+  /GetNodes:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.NodeRespose'
+      summary: Get info about nodes in cluster
+swagger: "2.0"

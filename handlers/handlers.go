@@ -87,6 +87,11 @@ func Metrics(w http.ResponseWriter, r *http.Request) {
 	promhttp.Handler().ServeHTTP(w, r)
 }
 
+// GetNodes godoc
+// @Summary Get info about nodes in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.NodeRespose
+// @Router /GetNodes [get]
 func GetNodes(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
