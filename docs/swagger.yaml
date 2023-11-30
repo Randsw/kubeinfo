@@ -1,5 +1,38 @@
 basePath: /
 definitions:
+  kubeApiResponseStruct.FluxHelmreleasesResponse:
+    properties:
+      fluxhelmreleasesnumber:
+        type: integer
+      fluxhelmreleasesnumberbystatus:
+        $ref: '#/definitions/kubeApiResponseStruct.FluxKustomizationsStatus'
+    type: object
+  kubeApiResponseStruct.FluxKustomizationsResponse:
+    properties:
+      fluxkustomizationsnumber:
+        type: integer
+      fluxkustomizationsnumberbystatus:
+        $ref: '#/definitions/kubeApiResponseStruct.FluxKustomizationsStatus'
+    type: object
+  kubeApiResponseStruct.FluxKustomizationsStatus:
+    properties:
+      notready:
+        type: integer
+      ready:
+        type: integer
+      unknown:
+        type: integer
+    type: object
+  kubeApiResponseStruct.IngressResponse:
+    properties:
+      ingressnumber:
+        type: integer
+    type: object
+  kubeApiResponseStruct.NamespaceResponse:
+    properties:
+      NamespaceNumber:
+        type: integer
+    type: object
   kubeApiResponseStruct.NodeRespose:
     properties:
       contolplanenumber:
@@ -12,6 +45,39 @@ definitions:
         type: string
       workernumber:
         type: integer
+    type: object
+  kubeApiResponseStruct.PodsResponse:
+    properties:
+      podsnumber:
+        type: integer
+      podsnumberbystatus:
+        $ref: '#/definitions/kubeApiResponseStruct.PodsStatus'
+    type: object
+  kubeApiResponseStruct.PodsStatus:
+    properties:
+      failednumber:
+        type: integer
+      nodenumber:
+        type: integer
+      runningnumber:
+        type: integer
+      succeedednumber:
+        type: integer
+    type: object
+  kubeApiResponseStruct.ResourceResponce:
+    properties:
+      fluxhelmreleases:
+        $ref: '#/definitions/kubeApiResponseStruct.FluxHelmreleasesResponse'
+      fluxkustomizations:
+        $ref: '#/definitions/kubeApiResponseStruct.FluxKustomizationsResponse'
+      ingresses:
+        $ref: '#/definitions/kubeApiResponseStruct.IngressResponse'
+      namespaces:
+        $ref: '#/definitions/kubeApiResponseStruct.NamespaceResponse'
+      nodes:
+        $ref: '#/definitions/kubeApiResponseStruct.NodeRespose'
+      pods:
+        $ref: '#/definitions/kubeApiResponseStruct.PodsResponse'
     type: object
 host: kubeinfo-kubeinfo-backend.kubeinfo.svc
 info:
@@ -27,6 +93,66 @@ info:
   title: Kubeinfo API
   version: "1.0"
 paths:
+  /:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.ResourceResponce'
+      summary: Get info about resources in cluster
+  /fluxhelmreleases:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.FluxHelmreleasesResponse'
+      summary: Get info about FluxCD Kustomizations in cluster
+  /fluxkustomizations:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.FluxKustomizationsResponse'
+      summary: Get info about FluxCD Kustomizations in cluster
+  /healthz:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.NodeRespose'
+      summary: Liveness and readness probe enpoint
+  /ingresses:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.IngressResponse'
+      summary: Get info about ingresses in cluster
+  /namespaces:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.NamespaceResponse'
+      summary: Get info about namespaces in cluster
   /nodes:
     get:
       produces:
@@ -37,4 +163,14 @@ paths:
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.NodeRespose'
       summary: Get info about nodes in cluster
+  /pods:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kubeApiResponseStruct.NamespaceResponse'
+      summary: Get info about pods in cluster
 swagger: "2.0"
