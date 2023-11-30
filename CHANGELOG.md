@@ -1,3 +1,10 @@
+## [1.2.0-develop.6](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.5...1.2.0-develop.6) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Add failure field to swagger docs ([3718307](https://github.com/Randsw/kubeinfo/commit/3718307c600ddd26531b008c935aa997c1fcf6e5))
+
 ## [1.2.0-develop.5](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.4...1.2.0-develop.5) (2023-11-30)
 
 
