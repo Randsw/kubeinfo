@@ -1,3 +1,10 @@
+## [1.2.0-develop.5](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.4...1.2.0-develop.5) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Add all handlers to swagger docs ([678b5eb](https://github.com/Randsw/kubeinfo/commit/678b5eb7757af9d0610377785a07bd974005328a))
+
 ## [1.2.0-develop.4](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.3...1.2.0-develop.4) (2023-11-29)
 
 
