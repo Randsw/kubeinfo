@@ -48,14 +48,14 @@ func ListNodes(client kubernetes.Interface) (*responsestruct.NodeRespose, error)
 	return nodesInfo, nil
 }
 
-func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceRespose, error) {
+func ListNamespaces(client kubernetes.Interface) (*responsestruct.NamespaceResponse, error) {
 	logger.Info("Get cluster namespaces...")
 	namespaces, err := GetAllNamespaces(client)
 	if err != nil {
 		logger.Info("Error getting cluster namespaces...", zap.String("error", err.Error()))
 		return nil, err
 	}
-	namespaceInfo := &responsestruct.NamespaceRespose{}
+	namespaceInfo := &responsestruct.NamespaceResponse{}
 	namespaceInfo.NamespaceNumber = len(namespaces)
 	return namespaceInfo, nil
 }

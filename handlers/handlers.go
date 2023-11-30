@@ -67,16 +67,20 @@ func response(w http.ResponseWriter, resourceinfo interface{}, resoursename stri
 }
 
 // HTTP Handlers
-
+// Healthz godoc
+// @Summary Liveness and readness probe enpoint
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.NodeRespose
+// @Router /healthz [get]
 func GetHealth(w http.ResponseWriter, r *http.Request) {
 	enc := json.NewEncoder(w)
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	resp := map[string]string{
-		"app_name": "Kubeinfo",
-		"status":   "OK",
-		"tag":      tag,
-		"hash":     hash,
-		"date":     date,
+	resp := &responsestruct.HealthzResponce{
+		App_name: "Kubeinfo",
+		Status:   "OK",
+		Tag:      tag,
+		Hash:     hash,
+		Date:     date,
 	}
 	if err := enc.Encode(resp); err != nil {
 		logger.Error("Error while encoding JSON response", zap.String("err", err.Error()))
@@ -87,6 +91,13 @@ func Metrics(w http.ResponseWriter, r *http.Request) {
 	promhttp.Handler().ServeHTTP(w, r)
 }
 
+// GetNodes godoc
+// @Summary Get info about nodes in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.NodeRespose
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /nodes [get]
 func GetNodes(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -99,6 +110,13 @@ func GetNodes(w http.ResponseWriter, r *http.Request) {
 	response(w, nodes, "nodes")
 }
 
+// GetNamespaces godoc
+// @Summary Get info about namespaces in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.NamespaceResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /namespaces [get]
 func GetNamespaces(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -111,6 +129,13 @@ func GetNamespaces(w http.ResponseWriter, r *http.Request) {
 	response(w, namespaces, "namespaces")
 }
 
+// GetPods godoc
+// @Summary Get info about pods in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.NamespaceResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /pods [get]
 func GetPods(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -123,6 +148,13 @@ func GetPods(w http.ResponseWriter, r *http.Request) {
 	response(w, pods, "pods")
 }
 
+// GetIngresses godoc
+// @Summary Get info about ingresses in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.IngressResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /ingresses [get]
 func GetIngresses(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -135,6 +167,13 @@ func GetIngresses(w http.ResponseWriter, r *http.Request) {
 	response(w, ingresses, "ingresses")
 }
 
+// GetFluxKustomizations godoc
+// @Summary Get info about FluxCD Kustomizations in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.FluxKustomizationsResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /fluxkustomizations [get]
 func GetFluxKustomizations(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -148,6 +187,13 @@ func GetFluxKustomizations(w http.ResponseWriter, r *http.Request) {
 	response(w, fluxKustomizations, "fluxKustomizations")
 }
 
+// GetFluxHelmreleases godoc
+// @Summary Get info about FluxCD Kustomizations in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.FluxHelmreleasesResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router /fluxhelmreleases [get]
 func GetFluxHelmreleases(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
 	k8sAPIClientset := k8sClient.ConnectToK8s()
@@ -161,11 +207,18 @@ func GetFluxHelmreleases(w http.ResponseWriter, r *http.Request) {
 	response(w, fluxHelmreleases, "fluxHelmreleases")
 }
 
+// GetKubeInfo godoc
+// @Summary Get info about resources in cluster
+// @Produce json
+// @Success 200 {object} kubeApiResponseStruct.ResourceResponce
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
+// @Router / [get]
 func GetKubeInfo(w http.ResponseWriter, r *http.Request) {
 	// Variable declaration
 	var err error
 	var nodes *responsestruct.NodeRespose
-	var namespaces *responsestruct.NamespaceRespose
+	var namespaces *responsestruct.NamespaceResponse
 	var pods *responsestruct.PodsResponse
 	var ingresses *responsestruct.IngressResponse
 	clusterInfo := &responsestruct.ResourceResponce{}

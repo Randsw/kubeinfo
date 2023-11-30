@@ -1,3 +1,66 @@
+## [1.2.0-develop.7](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.6...1.2.0-develop.7) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Update swagger files ([4352ffd](https://github.com/Randsw/kubeinfo/commit/4352ffd246c7dde7a8dd69d6b1efa5c149330071))
+
+## [1.2.0-develop.6](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.5...1.2.0-develop.6) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Add failure field to swagger docs ([3718307](https://github.com/Randsw/kubeinfo/commit/3718307c600ddd26531b008c935aa997c1fcf6e5))
+
+## [1.2.0-develop.5](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.4...1.2.0-develop.5) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Add all handlers to swagger docs ([678b5eb](https://github.com/Randsw/kubeinfo/commit/678b5eb7757af9d0610377785a07bd974005328a))
+
+## [1.2.0-develop.4](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.3...1.2.0-develop.4) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix router path in swagger ([1467f1a](https://github.com/Randsw/kubeinfo/commit/1467f1a5364f2c678961fe6079f6b879e03e58d1))
+
+## [1.2.0-develop.3](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.2...1.2.0-develop.3) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix api host to execute from container ([f01d4bc](https://github.com/Randsw/kubeinfo/commit/f01d4bcb093609b7f07f0f46ed5044c7b552a0f8))
+
+## [1.2.0-develop.2](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.1...1.2.0-develop.2) (2023-11-29)
+
+
+### 🛠 Fixes
+
+* **api:** Fix swagger doc import path ([bcfc455](https://github.com/Randsw/kubeinfo/commit/bcfc455c00b2b086671e76b440e6fe7200d64a2d))
+
+## [1.2.0-develop.1](https://github.com/Randsw/kubeinfo/compare/1.1.8...1.2.0-develop.1) (2023-11-29)
+
+
+### 🦊 CI/CD
+
+* use latest version of chart-test ([9b8bc65](https://github.com/Randsw/kubeinfo/commit/9b8bc65f8da83a420008dccc5ddabd1b6a583bcf))
+
+
+### 🚀 Features
+
+* **api:** Add swagger page ([e7b36ca](https://github.com/Randsw/kubeinfo/commit/e7b36ca671df68fb71fa4da1fcc240729496a6a7))
+
+
+### Other
+
+* **deps:** bump github.com/gorilla/mux from 1.8.0 to 1.8.1 ([490825c](https://github.com/Randsw/kubeinfo/commit/490825c3ea1d37d5d43a53d58c1978728b82e3cb))
+* **deps:** bump helm/chart-releaser-action from 1.5.0 to 1.6.0 ([84649c8](https://github.com/Randsw/kubeinfo/commit/84649c8ee149d63bf8ab2a2461963dd2369a107e))
+* **deps:** bump helm/chart-testing-action from 2.6.0 to 2.6.1 ([9293815](https://github.com/Randsw/kubeinfo/commit/929381522f7f91f66156a7a1ad13667544d2bf8d))
+* **deps:** bump k8s.io/client-go from 0.28.3 to 0.28.4 ([6364b48](https://github.com/Randsw/kubeinfo/commit/6364b48aaa02274d8e58f361c0584bdd512a039d))
+* **deps:** bump randsw/kubeinfo in /helm-chart/kubeinfo-backend ([92b28f9](https://github.com/Randsw/kubeinfo/commit/92b28f9d2031b3786875ca09c8ada6a0c87da84e))
+
 ## [1.1.8](https://github.com/Randsw/kubeinfo/compare/1.1.7...1.1.8) (2023-11-01)
 
 
