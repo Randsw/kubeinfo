@@ -95,6 +95,8 @@ func Metrics(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about nodes in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.NodeRespose
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /nodes [get]
 func GetNodes(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -112,6 +114,8 @@ func GetNodes(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about namespaces in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.NamespaceResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /namespaces [get]
 func GetNamespaces(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -129,6 +133,8 @@ func GetNamespaces(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about pods in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.NamespaceResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /pods [get]
 func GetPods(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -146,6 +152,8 @@ func GetPods(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about ingresses in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.IngressResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /ingresses [get]
 func GetIngresses(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -163,6 +171,8 @@ func GetIngresses(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about FluxCD Kustomizations in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.FluxKustomizationsResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /fluxkustomizations [get]
 func GetFluxKustomizations(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -181,6 +191,8 @@ func GetFluxKustomizations(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about FluxCD Kustomizations in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.FluxHelmreleasesResponse
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router /fluxhelmreleases [get]
 func GetFluxHelmreleases(w http.ResponseWriter, r *http.Request) {
 	//Connect to k8s api server
@@ -199,6 +211,8 @@ func GetFluxHelmreleases(w http.ResponseWriter, r *http.Request) {
 // @Summary Get info about resources in cluster
 // @Produce json
 // @Success 200 {object} kubeApiResponseStruct.ResourceResponce
+// @Failure      500  {object}  string
+// @Failure      503  {object}  string
 // @Router / [get]
 func GetKubeInfo(w http.ResponseWriter, r *http.Request) {
 	// Variable declaration
