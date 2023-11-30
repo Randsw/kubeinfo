@@ -1,3 +1,10 @@
+## [1.2.0-develop.7](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.6...1.2.0-develop.7) (2023-11-30)
+
+
+### 🛠 Fixes
+
+* **api:** Update swagger files ([4352ffd](https://github.com/Randsw/kubeinfo/commit/4352ffd246c7dde7a8dd69d6b1efa5c149330071))
+
 ## [1.2.0-develop.6](https://github.com/Randsw/kubeinfo/compare/1.2.0-develop.5...1.2.0-develop.6) (2023-11-30)
 
 
