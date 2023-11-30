@@ -19,7 +19,7 @@ type NodeRespose struct {
 }
 
 // NamespaceRespose is represenatation of kubernetes namespace count
-type NamespaceRespose struct {
+type NamespaceResponse struct {
 	NamespaceNumber int `json:"NamespaceNumber"`
 }
 
@@ -56,9 +56,17 @@ type FluxHelmreleasesResponse struct {
 
 type ResourceResponce struct {
 	Nodes              NodeRespose                `json:"nodes"`
-	Namespaces         NamespaceRespose           `json:"namespaces"`
+	Namespaces         NamespaceResponse          `json:"namespaces"`
 	Pods               PodsResponse               `json:"pods"`
 	Ingresses          IngressResponse            `json:"ingresses"`
 	FluxKustomizations FluxKustomizationsResponse `json:"fluxkustomizations"`
 	FluxHelmreleases   FluxHelmreleasesResponse   `json:"fluxhelmreleases"`
+}
+
+type HealthzResponce struct {
+	App_name string `json:"app_name"`
+	Status   string `json:"status"`
+	Tag      string `json:"tag"`
+	Hash     string `json:"hash"`
+	Date     string `json:"date"`
 }
