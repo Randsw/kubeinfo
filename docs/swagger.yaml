@@ -102,6 +102,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.ResourceResponce'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about resources in cluster
   /fluxhelmreleases:
     get:
@@ -112,6 +120,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.FluxHelmreleasesResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about FluxCD Kustomizations in cluster
   /fluxkustomizations:
     get:
@@ -122,6 +138,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.FluxKustomizationsResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about FluxCD Kustomizations in cluster
   /healthz:
     get:
@@ -142,6 +166,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.IngressResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about ingresses in cluster
   /namespaces:
     get:
@@ -152,6 +184,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.NamespaceResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about namespaces in cluster
   /nodes:
     get:
@@ -162,6 +202,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.NodeRespose'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about nodes in cluster
   /pods:
     get:
@@ -172,5 +220,13 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/kubeApiResponseStruct.NamespaceResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: Get info about pods in cluster
 swagger: "2.0"
