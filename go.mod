@@ -9,7 +9,7 @@ require (
 	github.com/prometheus/client_golang v1.17.0
 	github.com/randsw/cascadescenariocontroller v0.0.0-20220708134100-ae9c30dea846
 	github.com/swaggo/http-swagger/v2 v2.0.2
-	github.com/swaggo/swag v1.8.1
+	github.com/swaggo/swag v1.16.2
 	go.uber.org/zap v1.26.0
 	k8s.io/api v0.28.4
 	k8s.io/apimachinery v0.28.4
