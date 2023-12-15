@@ -1,6 +1,8 @@
 module github.com/randsw/kubeinfo
 
-go 1.19
+go 1.21
+
+toolchain go1.21.3
 
 require (
 	github.com/fluxcd/helm-controller/api v0.37.0
