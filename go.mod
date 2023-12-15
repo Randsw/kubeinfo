@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.21.3
 
 require (
-	github.com/fluxcd/helm-controller/api v0.37.0
+	github.com/fluxcd/helm-controller/api v0.37.1
 	github.com/fluxcd/kustomize-controller/api v1.2.1
 	github.com/gorilla/mux v1.8.1
 	github.com/prometheus/client_golang v1.17.0
