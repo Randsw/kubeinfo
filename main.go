@@ -16,7 +16,7 @@ import (
 
 // @title Kubeinfo API
 // @version 1.0
-// @description Kubeinfo used to get information about k8s cluster components including CRD
+// @description Kubeinfo used to get information about k8s cluster components
 // @termsOfService http://swagger.io/terms/
 
 // @contact.name API Support
