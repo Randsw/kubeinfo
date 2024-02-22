@@ -12,7 +12,7 @@ require (
 	github.com/randsw/cascadescenariocontroller v0.0.0-20220708134100-ae9c30dea846
 	github.com/swaggo/http-swagger/v2 v2.0.2
 	github.com/swaggo/swag v1.16.3
-	go.uber.org/zap v1.26.0
+	go.uber.org/zap v1.27.0
 	k8s.io/api v0.29.2
 	k8s.io/apimachinery v0.29.2
 	k8s.io/client-go v0.29.2
