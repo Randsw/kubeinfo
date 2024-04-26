@@ -40,7 +40,7 @@ jobs:
         with:
           files_yaml: |
             helm:
-              - helm-chart/kubeinfo-backend/*.{yaml,tpl}
+              - helm-chart/kubeinfo-backend/**/*.{yaml,tpl}
               - '!helm-chart/kubeinfo-backend/Chart.yaml'
 
       - name: Run chart-testing (lint)
