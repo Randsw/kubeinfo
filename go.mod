@@ -13,8 +13,8 @@ require (
 	github.com/swaggo/http-swagger/v2 v2.0.2
 	github.com/swaggo/swag v1.16.3
 	go.uber.org/zap v1.27.0
-	k8s.io/api v0.30.0
-	k8s.io/apimachinery v0.30.0
+	k8s.io/api v0.30.1
+	k8s.io/apimachinery v0.30.1
 	k8s.io/client-go v0.30.0
 )
 
