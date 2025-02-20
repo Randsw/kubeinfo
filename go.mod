@@ -6,7 +6,7 @@ toolchain go1.23.4
 
 require (
 	github.com/fluxcd/helm-controller/api v1.2.0
-	github.com/fluxcd/kustomize-controller/api v1.4.0
+	github.com/fluxcd/kustomize-controller/api v1.5.0
 	github.com/gorilla/mux v1.8.1
 	github.com/prometheus/client_golang v1.21.0
 	github.com/randsw/cascadescenariocontroller v0.0.0-20220708134100-ae9c30dea846
