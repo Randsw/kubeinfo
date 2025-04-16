@@ -6,12 +6,14 @@ on:
       - 'main'
     paths:
       - 'helm-chart/kubeinfo-backend/**/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.tpl'
   pull_request:
     branches:
       - 'develop'
       - 'main'
     paths:
       - 'helm-chart/kubeinfo-backend/**/*.yaml'
+      - 'helm-chart/kubeinfo-backend/**/*.tpl'
 permissions:
   contents: write
 jobs:
@@ -80,7 +82,7 @@ jobs:
         with:
           files_yaml: |
             helm:
-              - helm-chart/kubeinfo-backend/*.{yaml,tpl}
+              - helm-chart/kubeinfo-backend/**/*.{yaml,tpl}
               - '!helm-chart/kubeinfo-backend/Chart.yaml'
             chart_version:
               - 'helm-chart/kubeinfo-backend/Chart.yaml'
