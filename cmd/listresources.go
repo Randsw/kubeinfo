@@ -179,7 +179,7 @@ func CountFluxKustomization(client kubernetes.Interface, clientDynamic dynamic.I
 }
 
 func ListHelmreleases(clientDynamic dynamic.Interface, namespace string, fluxHelmreleasesInfo *responsestruct.FluxHelmreleasesResponse) error {
-	var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2beta1", Resource: "helmreleases"}
+	var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2", Resource: "helmreleases"}
 	fluxHelmreleasesList, err := clientDynamic.Resource(fluxHelmreleases).Namespace(namespace).List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		logger.Info("Error getting cluster flux helmreleases...", zap.String("error", err.Error()))
