@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	helmv2 "github.com/fluxcd/helm-controller/api/v2beta1"
+	helmv2 "github.com/fluxcd/helm-controller/api/v2"
 	kustomizev1 "github.com/fluxcd/kustomize-controller/api/v1beta2"
 	responsestruct "github.com/randsw/kubeinfo/KubeApiResponseStruct"
 	"github.com/randsw/kubeinfo/logger"
@@ -617,42 +617,42 @@ func TestListHelmreleases(t *testing.T) {
 	}
 	logger.InitLogger()
 	for _, test := range testCases {
-	//	t.Run(test.name, func(t *testing.T) {
-			var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2beta1", Resource: "helmreleases"}
-			testScheme := runtime.NewScheme()
-			err := helmv2.AddToScheme(testScheme)
-			if err != nil {
-				t.Fatalf("unexpected error while adding to Scheme: %v", err)
-			}
-			fluxHelmreleasesInfo := &responsestruct.FluxHelmreleasesResponse{}
-			fakeClientSet := dynamicfake.NewSimpleDynamicClientWithCustomListKinds(testScheme,
-				map[schema.GroupVersionResource]string{
-					fluxHelmreleases: "HelmReleaseList"}, test.clusterFluxHelmrelease...)
-			err = ListHelmreleases(fakeClientSet, test.namespace, fluxHelmreleasesInfo)
-			if fluxHelmreleasesInfo.FluxHelmreleasesNumber != test.expectedNumber {
-				t.Fatalf("Number of FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
-					fluxHelmreleasesInfo.FluxHelmreleasesNumber,
-					test.expectedNumber)
-			}
-			if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Ready != test.expectedReady {
-				t.Fatalf("Number of running FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
-					fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Ready,
-					test.expectedReady)
-			}
-			if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.NotReady != test.expectedNotReady {
-				t.Fatalf("Number of succeeded FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
-					fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.NotReady,
-					test.expectedNotReady)
-			}
-			if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Unknown != test.expectedUnknown {
-				t.Fatalf("Number of failed FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
-					fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Unknown,
-					test.expectedUnknown)
-			}
-			if err != nil {
-				t.Fatalf("unexpected error while counting namespaces: %v", err)
-			}
-	//	})
+		//	t.Run(test.name, func(t *testing.T) {
+		var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2beta1", Resource: "helmreleases"}
+		testScheme := runtime.NewScheme()
+		err := helmv2.AddToScheme(testScheme)
+		if err != nil {
+			t.Fatalf("unexpected error while adding to Scheme: %v", err)
+		}
+		fluxHelmreleasesInfo := &responsestruct.FluxHelmreleasesResponse{}
+		fakeClientSet := dynamicfake.NewSimpleDynamicClientWithCustomListKinds(testScheme,
+			map[schema.GroupVersionResource]string{
+				fluxHelmreleases: "HelmReleaseList"}, test.clusterFluxHelmrelease...)
+		err = ListHelmreleases(fakeClientSet, test.namespace, fluxHelmreleasesInfo)
+		if fluxHelmreleasesInfo.FluxHelmreleasesNumber != test.expectedNumber {
+			t.Fatalf("Number of FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
+				fluxHelmreleasesInfo.FluxHelmreleasesNumber,
+				test.expectedNumber)
+		}
+		if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Ready != test.expectedReady {
+			t.Fatalf("Number of running FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
+				fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Ready,
+				test.expectedReady)
+		}
+		if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.NotReady != test.expectedNotReady {
+			t.Fatalf("Number of succeeded FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
+				fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.NotReady,
+				test.expectedNotReady)
+		}
+		if fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Unknown != test.expectedUnknown {
+			t.Fatalf("Number of failed FluxHelmreleases in namespace %s - %d are not equal expected value %d", test.namespace,
+				fluxHelmreleasesInfo.FluxHelmreleasesNumberbyStatus.Unknown,
+				test.expectedUnknown)
+		}
+		if err != nil {
+			t.Fatalf("unexpected error while counting namespaces: %v", err)
+		}
+		//	})
 	}
 }
 
