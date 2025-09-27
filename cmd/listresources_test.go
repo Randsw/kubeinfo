@@ -504,14 +504,14 @@ func TestListHelmreleases(t *testing.T) {
 			clusterFluxHelmrelease: []runtime.Object{
 				&helmv2.HelmReleaseList{
 					TypeMeta: metav1.TypeMeta{
-						APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+						APIVersion: "helm.toolkit.fluxcd.io/v2",
 						Kind:       "HelmReleaseList",
 					},
 					ListMeta: metav1.ListMeta{},
 					Items: []helmv2.HelmRelease{
 						{
 							TypeMeta: metav1.TypeMeta{
-								APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+								APIVersion: "helm.toolkit.fluxcd.io/v2",
 								Kind:       "HelmRelease",
 							},
 							ObjectMeta: metav1.ObjectMeta{
@@ -530,7 +530,7 @@ func TestListHelmreleases(t *testing.T) {
 						},
 						{
 							TypeMeta: metav1.TypeMeta{
-								APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+								APIVersion: "helm.toolkit.fluxcd.io/v2",
 								Kind:       "HelmRelease",
 							},
 							ObjectMeta: metav1.ObjectMeta{
@@ -549,7 +549,7 @@ func TestListHelmreleases(t *testing.T) {
 						},
 						{
 							TypeMeta: metav1.TypeMeta{
-								APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+								APIVersion: "helm.toolkit.fluxcd.io/v2",
 								Kind:       "HelmRelease",
 							},
 							ObjectMeta: metav1.ObjectMeta{
@@ -568,7 +568,7 @@ func TestListHelmreleases(t *testing.T) {
 						},
 						{
 							TypeMeta: metav1.TypeMeta{
-								APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+								APIVersion: "helm.toolkit.fluxcd.io/v2",
 								Kind:       "HelmRelease",
 							},
 							ObjectMeta: metav1.ObjectMeta{
@@ -587,7 +587,7 @@ func TestListHelmreleases(t *testing.T) {
 						},
 						{
 							TypeMeta: metav1.TypeMeta{
-								APIVersion: "helm.toolkit.fluxcd.io/v2beta1",
+								APIVersion: "helm.toolkit.fluxcd.io/v2",
 								Kind:       "HelmRelease",
 							},
 							ObjectMeta: metav1.ObjectMeta{
@@ -618,7 +618,7 @@ func TestListHelmreleases(t *testing.T) {
 	logger.InitLogger()
 	for _, test := range testCases {
 		//	t.Run(test.name, func(t *testing.T) {
-		var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2beta1", Resource: "helmreleases"}
+		var fluxHelmreleases = schema.GroupVersionResource{Group: "helm.toolkit.fluxcd.io", Version: "v2", Resource: "helmreleases"}
 		testScheme := runtime.NewScheme()
 		err := helmv2.AddToScheme(testScheme)
 		if err != nil {
