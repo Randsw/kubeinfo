@@ -11,8 +11,8 @@ github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/emicklei/go-restful/v3 v3.12.2 h1:DhwDP0vY3k8ZzE0RunuJy8GhNpPL6zqLkDf9B/a0/xU=
 github.com/emicklei/go-restful/v3 v3.12.2/go.mod h1:6n3XBCmQQb25CM2LCACGz8ukIrRry+4bhvbpWn3mrbc=
-github.com/fluxcd/helm-controller/api v1.4.0 h1:SIU/H+pKdaxF+hT3+0ZreoCw7rfBW5wsS2HCNt0pThw=
-github.com/fluxcd/helm-controller/api v1.4.0/go.mod h1:qmt+v3nIjxjmToxW3Q7Tye5aCLt3oS1YLqAAMjV2MyY=
+github.com/fluxcd/helm-controller/api v1.4.1 h1:+MhLCCd7MFtGsycyGI1VS9Dc5ymHQRe/wgPwkSltV9E=
+github.com/fluxcd/helm-controller/api v1.4.1/go.mod h1:qmt+v3nIjxjmToxW3Q7Tye5aCLt3oS1YLqAAMjV2MyY=
 github.com/fluxcd/kustomize-controller/api v1.7.0 h1:5AO+pNY24qdJxxmtKNauplalII2HwED936pOMIDqNOA=
 github.com/fluxcd/kustomize-controller/api v1.7.0/go.mod h1:VuW1e7ILa6QVUnZ0Cxg+9Ghf12LvXu336vE2rAlHg4Y=
 github.com/fluxcd/pkg/apis/kustomize v1.12.0 h1:KvZN6xwgP/dNSeckL4a/Uv715XqiN1C3xS+jGcPejtE=
