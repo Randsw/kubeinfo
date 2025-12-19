@@ -69,7 +69,7 @@ func TestListNodes(t *testing.T) {
 	logger.InitLogger()
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
-			fakeClientSet := fake.NewSimpleClientset(test.clusterNS...)
+			fakeClientSet := fake.NewClientset(test.clusterNS...)
 			nsnumber, err := ListNamespaces(fakeClientSet)
 			if nsnumber.NamespaceNumber != test.expectedNumber {
 				t.Fatalf("Number of namespaces %d are not equal expected value %d", nsnumber.NamespaceNumber, test.expectedNumber)
@@ -129,7 +129,7 @@ func TestGetAllNamespaces(t *testing.T) {
 	logger.InitLogger()
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
-			fakeClientSet := fake.NewSimpleClientset(test.clusterNS...)
+			fakeClientSet := fake.NewClientset(test.clusterNS...)
 			namespaces, err := GetAllNamespaces(fakeClientSet)
 			// for _, namespace := range namespaces.Items {
 			// 	NsNames = append(NsNames, namespace.Name)
@@ -199,7 +199,7 @@ func TestListIngress(t *testing.T) {
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
 			var ingressNumber *int
-			fakeClientSet := fake.NewSimpleClientset(test.clusterIng...)
+			fakeClientSet := fake.NewClientset(test.clusterIng...)
 			ingressNumber, err := ListIngress(fakeClientSet, test.expectedNS)
 
 			if *ingressNumber != test.expectedNumber {
@@ -300,7 +300,7 @@ func TestListPods(t *testing.T) {
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
 			podsInfo := &responsestruct.PodsResponse{}
-			fakeClientSet := fake.NewSimpleClientset(test.clusterPods...)
+			fakeClientSet := fake.NewClientset(test.clusterPods...)
 			err := ListPods(fakeClientSet, test.namespace, podsInfo)
 			if podsInfo.PodsNumber != test.expectedNumber {
 				t.Fatalf("Number of pods in namespace %s - %d are not equal expected value %d", test.namespace, podsInfo.PodsNumber, test.expectedNumber)
