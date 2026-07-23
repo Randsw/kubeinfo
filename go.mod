@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/fluxcd/helm-controller/api v1.6.2
-	github.com/fluxcd/kustomize-controller/api v1.9.3
+	github.com/fluxcd/kustomize-controller/api v1.9.4
 	github.com/gorilla/mux v1.8.1
 	github.com/prometheus/client_golang v1.24.0
 	github.com/randsw/cascadescenariocontroller v0.0.0-20220708134100-ae9c30dea846
