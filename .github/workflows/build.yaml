@@ -8,7 +8,7 @@ permissions:
     packages: write
 jobs:
     Deploy:
-      # The type of runner that the job will run on
+      # The type of runner the job will run on
       runs-on: ubuntu-latest
       steps:
       - name: checkout
@@ -37,6 +37,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set build date
+        id: builddate
+        run: echo "value=$(date -u +%Y-%m-%d.%H:%M:%S)" >> "$GITHUB_OUTPUT"
       - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v7
         with:
@@ -45,6 +48,12 @@ jobs:
           # Note: tags has to be all lower-case
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          # Version metadata baked into the binary and served by /healthz.
+          # The build no longer shells out to git, so .git is excluded via .dockerignore.
+          build-args: |
+            VERSION=${{ steps.meta.outputs.version }}
+            COMMIT=${{ github.sha }}
+            BUILD_DATE=${{ steps.builddate.outputs.value }}
           push: true
     Release:
         needs: Deploy
